@@ -345,31 +345,90 @@ function buildSidebarGroups(t: (key: string) => string): SidebarGroup[] {
   ];
 }
 
-function buildSidebarGroups21(t: (key: string) => string): SidebarGroup[] {
-  const base = buildSidebarGroups(t);
+function buildSidebarGroups21(_t: (key: string) => string): SidebarGroup[] {
   return [
     {
       label: "DS 3.0",
       items: [
-        { id: "ds21-roadmap", label: "Upgrade Roadmap", icon: <Layers size={16} />, badge: "Plan" },
+        { id: "ds21-roadmap", label: "Upgrade Roadmap", icon: <Layers size={16} /> },
         { id: "ds3-getting-started", label: "Getting Started", icon: <BookOpen size={16} /> },
       ],
     },
     {
       label: "Form",
       items: [
-        { id: "ds3-button", label: "Button", icon: <SquareMousePointer size={16} />, badge: "3.0" },
-        { id: "ds3-input", label: "Input", icon: <Type size={16} />, badge: "3.0" },
-        { id: "ds3-badge", label: "Badge", icon: <BadgeCheck size={16} />, badge: "3.0" },
+        { id: "ds3-button",  label: "Button",   icon: <SquareMousePointer size={16} />, badge: "3.0" },
+        { id: "ds3-input",   label: "Input",    icon: <Type size={16} />,               badge: "3.0" },
+        { id: "input",       label: "Textarea", icon: <Type size={16} />,               badge: "update" },
+        { id: "checkbox",    label: "Checkbox", icon: <CheckSquare size={16} />,        badge: "update" },
+        { id: "radio",       label: "Radio",    icon: <CircleDot size={16} />,          badge: "update" },
+        { id: "switch",      label: "Toggle",   icon: <Power size={16} />,              badge: "update" },
+        { id: "dropdown",    label: "Dropdown", icon: <ChevronDown size={16} />,        badge: "update" },
+        { id: "datepicker",  label: "Calendar", icon: <CalendarDays size={16} />,       badge: "update" },
+        { id: "inputtag",    label: "Input Tag",icon: <Tags size={16} />,               badge: "update" },
+        { id: "otpinput",    label: "Pin Code", icon: <SquareMousePointer size={16} />, badge: "update" },
+        { id: "fileupload",  label: "File Upload",     icon: <UploadIcon size={16} />,  badge: "wait" },
+        { id: "colorpicker", label: "Color Picker",    icon: <Palette size={16} />,     badge: "wait" },
+        { id: "numberinput", label: "Number Input",    icon: <ChevronsUpDown size={16} />, badge: "wait" },
+        { id: "rating",      label: "Rating",          icon: <Star size={16} />,        badge: "wait" },
+        { id: "filterbar",   label: "Filter Bar",      icon: <SearchIcon size={16} />,  badge: "wait" },
+        { id: "repeatablefield", label: "Repeatable Field", icon: <ListOrdered size={16} />, badge: "wait" },
+        { id: "richtexteditor", label: "Rich Text Editor", icon: <PenTool size={16} />, badge: "wait" },
       ],
     },
     {
       label: "Data Display",
       items: [
-        { id: "ds3-charts", label: "Charts", icon: <BarChart3 size={16} />, badge: "3.0" },
+        { id: "ds3-badge",    label: "Badge",     icon: <BadgeCheck size={16} />,    badge: "3.0" },
+        { id: "ds3-charts",   label: "Charts",    icon: <BarChart3 size={16} />,     badge: "3.0" },
+        { id: "tag",          label: "Tag",       icon: <Tag size={16} />,           badge: "update" },
+        { id: "avatar",       label: "Avatar",    icon: <UserCircle size={16} />,    badge: "update" },
+        { id: "skeleton",     label: "Skeleton",  icon: <Bone size={16} />,          badge: "update" },
+        { id: "table",        label: "Table",     icon: <Table2 size={16} />,        badge: "update" },
+        { id: "timeline",     label: "Timeline",  icon: <GitPullRequest size={16} />, badge: "update" },
+        { id: "statistic",    label: "Statistic", icon: <TrendingUp size={16} />,    badge: "wait" },
+        { id: "pagination",   label: "Pagination",icon: <ListOrdered size={16} />,   badge: "wait" },
+        { id: "tree",         label: "Tree",      icon: <FolderTree size={16} />,    badge: "wait" },
+        { id: "transferlist", label: "Transfer List", icon: <ArrowRightLeft size={16} />, badge: "wait" },
+        { id: "imagepreview", label: "Image Preview", icon: <Image size={16} />,    badge: "wait" },
+        { id: "imagegallery", label: "Image Gallery", icon: <Image size={16} />,    badge: "wait" },
       ],
     },
-    ...base,
+    {
+      label: "Feedback",
+      items: [
+        { id: "modal",        label: "Modal",       icon: <LayoutGrid size={16} />,  badge: "update" },
+        { id: "alert",        label: "Alert",       icon: <BellRing size={16} />,    badge: "update" },
+        { id: "tooltip",      label: "Tooltip",     icon: <MessageSquare size={16} />, badge: "update" },
+        { id: "spinner",      label: "Spinner",     icon: <Loader2 size={16} />,     badge: "update" },
+        { id: "progressbar",  label: "Progress Bar",icon: <BarChart3 size={16} />,   badge: "update" },
+        { id: "notification", label: "Notification",icon: <BellDot size={16} />,     badge: "wait" },
+        { id: "popover",      label: "Popover",     icon: <Pointer size={16} />,     badge: "wait" },
+      ],
+    },
+    {
+      label: "Navigation",
+      items: [
+        { id: "tabs",         label: "Tabs",     icon: <PanelTop size={16} />,       badge: "update" },
+        { id: "sidebarcomp",  label: "Sidebar",  icon: <PanelLeftClose size={16} />, badge: "update" },
+        { id: "topnavbar",    label: "Top Navbar",icon: <Navigation size={16} />,    badge: "update" },
+        { id: "stepper",      label: "Stepper",  icon: <ListOrdered size={16} />,    badge: "update" },
+        { id: "accordion",    label: "Accordion",icon: <ChevronsUpDown size={16} />, badge: "update" },
+        { id: "menu",         label: "Menu",     icon: <GripVertical size={16} />,   badge: "update" },
+        { id: "breadcrumb",   label: "Breadcrumb",icon: <ChevronRight size={16} />,  badge: "wait" },
+      ],
+    },
+    {
+      label: "Layout",
+      items: [
+        { id: "card",         label: "Card",        icon: <CreditCard size={16} />,         badge: "update" },
+        { id: "drawer",       label: "Drawer",      icon: <PanelLeftClose size={16} />,     badge: "update" },
+        { id: "divider",      label: "Divider",     icon: <SeparatorHorizontal size={16} />, badge: "update" },
+        { id: "appshell",     label: "AppShell",    icon: <Layers size={16} />,              badge: "update" },
+        { id: "pageheader",   label: "Page Header", icon: <PanelTop size={16} />,            badge: "wait" },
+        { id: "choicecard",   label: "Choice Card", icon: <LayoutGrid size={16} />,          badge: "wait" },
+      ],
+    },
   ];
 }
 
@@ -453,12 +512,12 @@ const PAGE_MAP: Record<PageId, React.ComponentType> = {
 // ─── App ──────────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [dsMode, setDsMode] = useState<DsMode | null>(() => {
+  const [dsMode, setDsMode] = useState<DsMode>(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("ssk-ds-mode");
       if (saved === "2.0" || saved === "3.0") return saved;
     }
-    return null;
+    return "3.0";
   });
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
@@ -482,25 +541,13 @@ export default function App() {
     });
   };
 
-  if (!dsMode) {
-    return (
-      <div className={darkMode ? "dark" : ""}>
-        <EntryPage
-          onSelectMode={handleSelectMode}
-          darkMode={darkMode}
-          toggleDarkMode={toggleDarkMode}
-        />
-      </div>
-    );
-  }
-
   return (
     <I18nProvider>
       <AppInner
         dsMode={dsMode}
         onExitMode={() => {
-          localStorage.removeItem("ssk-ds-mode");
-          setDsMode(null);
+          localStorage.setItem("ssk-ds-mode", "3.0");
+          setDsMode("3.0");
         }}
         externalDarkMode={darkMode}
         externalToggleDarkMode={toggleDarkMode}
