@@ -1,0 +1,100 @@
+# Sellsuki Design System — Cursor Rules
+# Full spec: https://sellsukidesignsystemv12.vercel.app/ai-rules.md
+
+## Setup (REQUIRED — must do FIRST)
+```bash
+npm install @uxuissk/design-system@0.8.4
+npm install @uxuissk/design-tokens@0.1.1  # optional tokens
+```
+
+```tsx
+// main.tsx or App.tsx — FIRST LINE, before everything else
+import "@uxuissk/design-system/styles.css";
+import { DSButton, DSInput, Card, AdvancedDataTable, TopNavbar, Sidebar } from "@uxuissk/design-system";
+```
+
+⚠️ WITHOUT the CSS import: fonts will be wrong (no DB HeaventRounded), all size tokens will be undefined, components will look broken.
+
+## Font — DB HeaventRounded for ALL text
+- NEVER use Inter, system-ui, or any other font
+- Font is bundled in the npm package — no Google Fonts needed
+- Apply to: headings, body, labels, buttons, badges, nav, table, sidebar
+
+## Typography Tokens
+| Token | Size | Weight | Usage |
+|-------|------|--------|-------|
+| `var(--text-h1)` | 48px | 400 | Page hero |
+| `var(--text-h2)` | 40px | 400 | Page title |
+| `var(--text-h3)` | 28px | 700 | Section header |
+| `var(--text-h4)` | 24px | 500 | Card header |
+| `var(--text-p)` | 20px | 400 | Body text |
+| `var(--text-label)` | 18px | 400 | Form labels |
+| `var(--text-button)` | 18px | 600 | Buttons, badges |
+| `var(--text-caption)` | 14px | 400 | Captions, hints |
+
+⚠️ MINIMUM font size: 14px (`var(--text-caption)`) — never use smaller
+
+## Colors
+| Token | Hex | Usage |
+|-------|-----|-------|
+| Primary | `#32a9ff` | Buttons, links, brand |
+| Primary hover | `#1b8bf5` | Hover states |
+| Text primary | `#1f2937` | Headings, body |
+| Text secondary | `#6b7280` | Muted text |
+| Border | `#e5e7eb` | Dividers, cards |
+| Surface | `#f9fafb` | Page background |
+| Success | `#059669` | Success states |
+| Warning | `#d97706` | Warning states |
+| Danger | `#e11d48` | Error, destructive |
+
+Use CSS variables: `var(--primary)`, `var(--foreground)`, `var(--border)` etc. NEVER hardcode hex.
+
+## Layout Pattern — AppShell (preferred)
+```tsx
+import { AppShell, sellsukiBrandConfig, FeaturePageScaffold } from "@uxuissk/design-system";
+
+<AppShell
+  product={sellsukiBrandConfig}
+  user={currentUser}
+  navResolver={myNavResolver}
+  activeItemId="orders"
+  onNavigate={(item) => router.push(item.href!)}
+>
+  <FeaturePageScaffold
+    layout="list"
+    header={<PageHeader title="Orders" primaryAction={{ label: "Create order" }} />}
+    content={<DSTable ... />}
+  />
+</AppShell>
+```
+
+## Button Rules
+- Variants: `primary` | `secondary` | `outline` | `ghost` | `destructive` | `link`
+- Sizes: `sm` (32px) | `md` (36px) | `lg` (40px) | `xl` (44px)
+- **MAX 1 primary button per view**
+
+## Components (60+ total)
+Data Entry: DSButton, IconButton, ButtonGroup, DSInput, DSTextarea, DSCheckbox, CheckboxGroup, DSRadio, RadioGroup, Switch, Dropdown, DatePicker, DateRangePicker, TimePicker, DateTimePicker, SearchField, ColorPicker, FileUpload, TagInput, Rating, TransferList, NumberInput, OTPInput, RepeatableFieldList, RichTextEditor
+Data Display: DSTable, AdvancedDataTable, Card, CardHeader, CardBody, CardFooter, StatCard, Statistic, Badge, Tag, Avatar, AvatarGroup, Timeline, Tree, EmptyState, Skeleton, ImageGallery, ThumbnailCell
+Charts: LineChart, AreaChart, BarChart, DonutChart, MiniSparkline
+Choice: ChoiceCard, ChoiceCardGroup, RadioCard
+Navigation: TopNavbar, Sidebar, Breadcrumb, Tabs, Stepper, Pagination
+Feedback: Alert, Modal, Drawer, ConfirmDialog, Notification, toast, ToastContainer, Tooltip, Popover, ProgressBar, Spinner
+Layout: Divider, Menu, ImagePreview, PageHeader, FilterBar, FeaturePageScaffold, ScaffoldSection, ScaffoldKPIRow
+Form: FormField, FormLabel, FormError, FormHelperText
+Shell: AppShell, AppShellSkeleton, AppShellProvider, useAppShell, useBreadcrumbs
+
+## Rules
+1. Always import CSS first — `import "@uxuissk/design-system/styles.css"`
+2. Use DS components — never create custom buttons, inputs, modals
+3. DB HeaventRounded for ALL text — never Inter
+4. Min font size 14px — never smaller
+5. Max 1 primary button per view
+6. Handle loading (Skeleton), empty (EmptyState), error (Alert) states
+7. Use only palette colors — no random hex values
+8. Flat design — no heavy shadows, no gradients
+
+## Resources
+- Storybook: https://sellsukidesignsystemv12.vercel.app
+- Full AI rules: https://sellsukidesignsystemv12.vercel.app/ai-rules.md
+- npm: https://www.npmjs.com/package/@uxuissk/design-system
