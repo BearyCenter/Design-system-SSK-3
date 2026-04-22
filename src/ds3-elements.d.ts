@@ -2,10 +2,11 @@ import type { HTMLAttributes } from "react";
 
 type DS3El = HTMLAttributes<HTMLElement> & Record<string, any>;
 
-declare global {
+declare module "react" {
   namespace JSX {
     interface IntrinsicElements {
       "ds-app-shell-provider": DS3El;
+      "ds-theme-provider": DS3El;
       "ds-button": DS3El;
       "ds-input": DS3El;
       "ds-textarea": DS3El;

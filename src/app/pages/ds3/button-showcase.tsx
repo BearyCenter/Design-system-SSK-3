@@ -1,5 +1,5 @@
 import { Layers, ChevronRight } from "lucide-react";
-import { Section, DemoCard, APITable, fontBody, fontLabel } from "../_showcase-factory";
+import { Section, DemoCard, APITable, fontBody } from "../_showcase-factory";
 
 export function DS3ButtonShowcase() {
   return (
@@ -16,15 +16,26 @@ export function DS3ButtonShowcase() {
         </p>
       </div>
 
-      <ds-app-shell-provider brand="patona">
+      <ds-theme-provider brand="patona">
         <Section title="Variants" description="รูปแบบต่างๆ ของ button"
-          code={`<ds-button variant="primary">Primary</ds-button>\n<ds-button variant="outline">Outline</ds-button>\n<ds-button variant="ghost">Ghost</ds-button>\n<ds-button variant="danger">Danger</ds-button>`}>
+          code={`<ds-button variant="solid">Solid</ds-button>\n<ds-button variant="outline">Outline</ds-button>\n<ds-button variant="ghost">Ghost</ds-button>\n<ds-button variant="solid-light">Solid Light</ds-button>`}>
           <DemoCard label="All variants">
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <ds-button variant="primary">Primary</ds-button>
+              <ds-button variant="solid">Solid</ds-button>
               <ds-button variant="outline">Outline</ds-button>
               <ds-button variant="ghost">Ghost</ds-button>
-              <ds-button variant="danger">Danger</ds-button>
+              <ds-button variant="solid-light">Solid Light</ds-button>
+            </div>
+          </DemoCard>
+        </Section>
+
+        <Section title="Colors" description="themeColor — primary, danger, success, warning"
+          code={`<ds-button themeColor="primary">Primary</ds-button>\n<ds-button themeColor="danger">Danger</ds-button>\n<ds-button themeColor="success">Success</ds-button>`}>
+          <DemoCard label="Colors">
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <ds-button themeColor="primary">Primary</ds-button>
+              <ds-button themeColor="danger">Danger</ds-button>
+              <ds-button themeColor="success">Success</ds-button>
             </div>
           </DemoCard>
         </Section>
@@ -40,22 +51,21 @@ export function DS3ButtonShowcase() {
           </DemoCard>
         </Section>
 
-        <Section title="States" description="disabled และ loading"
-          code={`<ds-button disabled>Disabled</ds-button>\n<ds-button loading>Loading</ds-button>`}>
+        <Section title="States" description="disabled"
+          code={`<ds-button disabled>Disabled</ds-button>`}>
           <DemoCard label="States">
             <div style={{ display: "flex", gap: "12px" }}>
               <ds-button disabled>Disabled</ds-button>
-              <ds-button loading>Loading</ds-button>
             </div>
           </DemoCard>
         </Section>
-      </ds-app-shell-provider>
+      </ds-theme-provider>
 
       <APITable rows={[
-        { prop: "variant", type: "primary | outline | ghost | danger", def: "primary", desc: "รูปแบบ button" },
+        { prop: "variant", type: "solid | outline | ghost | solid-light", def: "solid", desc: "รูปแบบ button" },
+        { prop: "themeColor", type: "primary | danger | success | warning | info | ...", def: "primary", desc: "สี button ตาม theme" },
         { prop: "size", type: "sm | md | lg", def: "md", desc: "ขนาด" },
         { prop: "disabled", type: "boolean", def: "false", desc: "ปิดการใช้งาน" },
-        { prop: "loading", type: "boolean", def: "false", desc: "แสดง spinner แทน content" },
         { prop: "testId", type: "string", def: "—", desc: "data-testid สำหรับ testing" },
       ]} />
     </div>

@@ -1,5 +1,5 @@
 import { Layers, ChevronRight } from "lucide-react";
-import { Section, DemoCard, APITable, fontBody, fontLabel } from "../_showcase-factory";
+import { Section, DemoCard, APITable, fontBody } from "../_showcase-factory";
 
 export function DS3InputShowcase() {
   return (
@@ -16,7 +16,7 @@ export function DS3InputShowcase() {
         </p>
       </div>
 
-      <ds-app-shell-provider brand="patona">
+      <ds-theme-provider brand="patona">
         <Section title="Default" description="Input พื้นฐาน"
           code={`<ds-input label="ชื่อสินค้า" placeholder="กรอกชื่อ"></ds-input>`}>
           <DemoCard label="Default">
@@ -47,7 +47,7 @@ export function DS3InputShowcase() {
             </div>
           </DemoCard>
         </Section>
-      </ds-app-shell-provider>
+      </ds-theme-provider>
 
       <APITable rows={[
         { prop: "label", type: "string", def: "—", desc: "ข้อความ label" },

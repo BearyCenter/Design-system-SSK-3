@@ -16,7 +16,7 @@ export function DS3BadgeShowcase() {
         </p>
       </div>
 
-      <ds-app-shell-provider brand="patona">
+      <ds-theme-provider brand="patona">
         <Section title="Colors" description="สีต่างๆ ของ badge"
           code={`<ds-badge>Default</ds-badge>\n<ds-badge color="success">Success</ds-badge>\n<ds-badge color="warning">Warning</ds-badge>\n<ds-badge color="danger">Danger</ds-badge>`}>
           <DemoCard label="Colors">
@@ -40,7 +40,7 @@ export function DS3BadgeShowcase() {
             </div>
           </DemoCard>
         </Section>
-      </ds-app-shell-provider>
+      </ds-theme-provider>
 
       <APITable rows={[
         { prop: "color", type: "default | success | warning | danger | info", def: "default", desc: "สีของ badge" },
