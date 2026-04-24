@@ -352,6 +352,7 @@ function buildSidebarGroups21(_t: (key: string) => string): SidebarGroup[] {
       items: [
         { id: "ds21-roadmap", label: "Upgrade Roadmap", icon: <Layers size={16} /> },
         { id: "ds3-getting-started", label: "Getting Started", icon: <BookOpen size={16} /> },
+        { id: "changelog", label: "Changelog", icon: <History size={16} />, badge: `v${latestChangelog.version}` },
       ],
     },
     {
