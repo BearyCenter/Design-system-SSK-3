@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Layers, ChevronRight, Star, Zap, Bell, Check, AlertTriangle, Clock, Shield, User } from "lucide-react";
-import { Badge, type BadgeVariant, type BadgeSize } from "../../lib/components/ssk-badge";
+import { Badge, type BadgeVariant, type BadgeSize } from "../../lib/components/ds-badge";
 import { Section, DemoCard, fontBody, fontLabel } from "./_showcase-factory";
-import { DSButton } from "../../lib/components/ssk-button";
+import { DSButton } from "../../lib/components/ds-button";
 import { useI18n } from "../i18n";
 
 const variants: BadgeVariant[] = ["default", "secondary", "outline", "destructive", "success", "warning"];

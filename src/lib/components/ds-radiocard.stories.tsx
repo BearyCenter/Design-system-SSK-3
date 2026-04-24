@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { RadioCard } from "./ssk-radiocard";
+import { RadioCard } from "./ds-radiocard";
 import { CreditCard, Banknote, QrCode, Wallet } from "lucide-react";
 
 const meta: Meta<typeof RadioCard> = {

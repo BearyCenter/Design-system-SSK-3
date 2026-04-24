@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { ChevronUp, ChevronDown, ChevronsUpDown } from "lucide-react";
-import { DSCheckbox } from "./ssk-checkbox";
+import { DSCheckbox } from "./ds-checkbox";
 
 export type TableSize = "sm" | "md" | "lg";
 

@@ -11,10 +11,10 @@ import {
   sellsukiBrandConfig, patonaBrandConfig, shipmunkBrandConfig,
   akitaBrandConfig, oc2plusBrandConfig, sellsukiPayBrandConfig,
 } from "../../lib/types/shell";
-import { DSButton } from "../../lib/components/ssk-button";
-import { Badge } from "../../lib/components/ssk-badge";
+import { DSButton } from "../../lib/components/ds-button";
+import { Badge } from "../../lib/components/ds-badge";
 import { TopNavbar } from "../../lib/components/ds-topnavbar";
-import { Sidebar } from "../../lib/components/ssk-sidebar";
+import { Sidebar } from "../../lib/components/ds-sidebar";
 import SellsukiIcon from "../../imports/SellsukiIcon";
 import PatonaIcon from "../../imports/PatonaIcon";
 import ShipmunkIcon from "../../imports/ShipmunkIcon";

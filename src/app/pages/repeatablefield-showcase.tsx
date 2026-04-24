@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PageHeader, Section, DemoBox, APITable, fontLabel } from "./_showcase-factory";
 import { RepeatableFieldList, type RepeatableFieldRow, type RepeatableFieldColumn } from "../../lib/components/ds-repeatablefield";
-import { DSInput } from "../../lib/components/ssk-input";
+import { DSInput } from "../../lib/components/ds-input";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 

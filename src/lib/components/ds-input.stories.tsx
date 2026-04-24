@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DSInput, DSTextarea } from "./ssk-input";
+import { DSInput, DSTextarea } from "./ds-input";
 import { Mail, Search } from "lucide-react";
 
 const meta: Meta<typeof DSInput> = {

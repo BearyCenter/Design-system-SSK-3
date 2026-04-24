@@ -1,7 +1,7 @@
 import React from "react";
 import { Star, Zap, Shield, Bell, Tag as TagIcon } from "lucide-react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, btnStyle } from "./_showcase-factory";
-import { Tag } from "../../lib/components/ssk-tag";
+import { Tag } from "../../lib/components/ds-tag";
 
 export function TagShowcase() {
   const [tags, setTags] = React.useState(["React", "TypeScript", "Tailwind", "Lit", "Figma"]);

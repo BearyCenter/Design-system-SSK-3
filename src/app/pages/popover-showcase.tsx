@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Settings, HelpCircle, Info, Bell, X, ChevronDown } from "lucide-react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel, fontLabelBold, smallLabel } from "./_showcase-factory";
 import { Popover } from "../../lib/components/ds-popover";
-import { DSButton } from "../../lib/components/ssk-button";
-import { DSTextarea } from "../../lib/components/ssk-input";
+import { DSButton } from "../../lib/components/ds-button";
+import { DSTextarea } from "../../lib/components/ds-input";
 import { FormLabel } from "../../lib/components/ds-form";
 
 /* ─── Showcase ─────────────────────────────────────────────────────────────── */

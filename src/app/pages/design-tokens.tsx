@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Layers, ChevronRight, Paintbrush, Type, Box, Palette, Sun, Moon, Copy, Check } from "lucide-react";
-import { Tabs } from "../../lib/components/ssk-tabs";
+import { Tabs } from "../../lib/components/ds-tabs";
 import { CodeBlock } from "../components/code-block";
 import { useI18n } from "../i18n";
 import { fontBody, fontLabel, btnStyle, smallLabel } from "./_showcase-factory";

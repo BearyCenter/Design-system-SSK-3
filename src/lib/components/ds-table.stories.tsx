@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DSTable } from "./ssk-table";
-import type { TableColumn } from "./ssk-table";
+import { DSTable } from "./ds-table";
+import type { TableColumn } from "./ds-table";
 
 interface Product { id: number; name: string; price: number; status: string; category: string }
 

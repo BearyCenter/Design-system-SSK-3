@@ -19,7 +19,7 @@ import {
   Mail,
   Globe,
 } from "lucide-react";
-import { DSButton, IconButton, ButtonGroup } from "../../lib/components/ssk-button";
+import { DSButton, IconButton, ButtonGroup } from "../../lib/components/ds-button";
 import { useI18n } from "../i18n";
 import { Section, DemoCard, fontBody, fontLabel } from "./_showcase-factory";
 

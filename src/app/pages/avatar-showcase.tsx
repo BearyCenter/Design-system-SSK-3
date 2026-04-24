@@ -1,6 +1,6 @@
 import React from "react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel } from "./_showcase-factory";
-import { Avatar, AvatarGroup } from "../../lib/components/ssk-avatar";
+import { Avatar, AvatarGroup } from "../../lib/components/ds-avatar";
 
 export function AvatarShowcase() {
   return (

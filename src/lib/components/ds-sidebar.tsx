@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PanelLeftClose, PanelLeftOpen, ChevronUp } from "lucide-react";
 import { Tooltip } from "./ds-tooltip";
-import { SidebarAccountSwitcher, type SidebarAccountSwitcherProps } from "./ssk-sidebar-account";
+import { SidebarAccountSwitcher, type SidebarAccountSwitcherProps } from "./ds-sidebar-account";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 

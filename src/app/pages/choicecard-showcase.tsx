@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Truck, Zap, Package, Store, Crown, Sparkles, Building2 } from "lucide-react";
 import { PageHeader, Section, DemoBox, APITable, fontLabel } from "./_showcase-factory";
 import { ChoiceCard, ChoiceCardGroup } from "../../lib/components/ds-choicecard";
-import { RadioCard } from "../../lib/components/ssk-radiocard";
+import { RadioCard } from "../../lib/components/ds-radiocard";
 
 // ─── Mock Data ────────────────────────────────────────────────────────────────
 

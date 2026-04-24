@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tabs } from "./ssk-tabs";
-import type { TabItem } from "./ssk-tabs";
+import { Tabs } from "./ds-tabs";
+import type { TabItem } from "./ds-tabs";
 import { Home, Settings, User } from "lucide-react";
 
 const sampleTabs: TabItem[] = [

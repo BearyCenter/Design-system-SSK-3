@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { FormField, FormLabel, FormError, FormHelperText } from "./ds-form";
-import { DSInput, DSTextarea } from "./ssk-input";
-import { Dropdown } from "./ssk-dropdown";
-import { DSCheckbox } from "./ssk-checkbox";
+import { DSInput, DSTextarea } from "./ds-input";
+import { Dropdown } from "./ds-dropdown";
+import { DSCheckbox } from "./ds-checkbox";
 
 const meta: Meta<typeof FormField> = {
   title: "Components/FormField",

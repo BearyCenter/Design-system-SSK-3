@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DSButton, IconButton, ButtonGroup } from "./ssk-button";
+import { DSButton, IconButton, ButtonGroup } from "./ds-button";
 import { Plus, ArrowRight, Trash2, Settings } from "lucide-react";
 
 const meta: Meta<typeof DSButton> = {

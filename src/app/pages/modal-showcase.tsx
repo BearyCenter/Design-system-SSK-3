@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Layers, ChevronRight } from "lucide-react";
-import { Modal, ConfirmDialog } from "../../lib/components/ssk-modal";
-import { DSButton } from "../../lib/components/ssk-button";
-import { DSInput, DSTextarea } from "../../lib/components/ssk-input";
+import { Modal, ConfirmDialog } from "../../lib/components/ds-modal";
+import { DSButton } from "../../lib/components/ds-button";
+import { DSInput, DSTextarea } from "../../lib/components/ds-input";
 import { FormLabel } from "../../lib/components/ds-form";
 import { Section, DemoCard, fontBody, fontLabel } from "./_showcase-factory";
 import { useI18n } from "../i18n";

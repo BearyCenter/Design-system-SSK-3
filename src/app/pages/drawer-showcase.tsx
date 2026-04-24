@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PageHeader, Section, DemoBox, APITable, fontLabel, fontLabelBold, smallLabel } from "./_showcase-factory";
 import { Drawer } from "../../lib/components/ds-drawer";
-import { DSButton } from "../../lib/components/ssk-button";
+import { DSButton } from "../../lib/components/ds-button";
 
 export function DrawerShowcase() {
   const [openSide, setOpenSide] = useState<string | null>(null);

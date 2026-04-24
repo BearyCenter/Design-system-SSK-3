@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tag } from "./ssk-tag";
+import { Tag } from "./ds-tag";
 import { Star } from "lucide-react";
 
 const meta: Meta<typeof Tag> = {

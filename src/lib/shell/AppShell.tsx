@@ -35,13 +35,13 @@ import { Bell, Search } from "lucide-react";
 import { AppShellProvider, useAppShellFull, AppShellErrorBoundary } from "./AppShellContext";
 import type { AppShellProviderProps } from "./AppShellContext";
 import type { ProductBrandConfig, ShellUser, NavResolver, ShellSidebarGroup, NavItem } from "../types/shell";
-import type { SidebarGroup, SidebarItem } from "../components/ssk-sidebar";
+import type { SidebarGroup, SidebarItem } from "../components/ds-sidebar";
 
 import { TopNavbar } from "../components/ds-topnavbar";
-import { Sidebar } from "../components/ssk-sidebar";
-import { Skeleton, SkeletonList } from "../components/ssk-skeleton";
-import { Alert } from "../components/ssk-alert";
-import { ToastContainer } from "../components/ssk-alert";
+import { Sidebar } from "../components/ds-sidebar";
+import { Skeleton, SkeletonList } from "../components/ds-skeleton";
+import { Alert } from "../components/ds-alert";
+import { ToastContainer } from "../components/ds-alert";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 

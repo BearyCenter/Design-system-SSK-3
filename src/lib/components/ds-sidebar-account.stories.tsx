@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { SidebarAccountSwitcher } from "./ssk-sidebar-account";
-import type { SidebarAccountItem } from "./ssk-sidebar-account";
+import { SidebarAccountSwitcher } from "./ds-sidebar-account";
+import type { SidebarAccountItem } from "./ds-sidebar-account";
 
 const COMPANIES: SidebarAccountItem[] = [
   { id: "1", name: "Sellsuki Company", handle: "@sellsuki", avatarFallback: "S" },

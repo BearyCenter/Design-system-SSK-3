@@ -20,15 +20,15 @@ import { fontLabel, btnStyle, smallLabel } from "./_showcase-factory";
 
 // ─── DS Components ────────────────────────────────────────────────────────────
 import { TopNavbar } from "../../lib/components/ds-topnavbar";
-import { Sidebar, type SidebarGroup } from "../../lib/components/ssk-sidebar";
-import { type SidebarAccountItem } from "../../lib/components/ssk-sidebar-account";
-import { DSButton, IconButton } from "../../lib/components/ssk-button";
-import { Badge } from "../../lib/components/ssk-badge";
-import { Tabs } from "../../lib/components/ssk-tabs";
-import { DSTable, type TableColumn } from "../../lib/components/ssk-table";
+import { Sidebar, type SidebarGroup } from "../../lib/components/ds-sidebar";
+import { type SidebarAccountItem } from "../../lib/components/ds-sidebar-account";
+import { DSButton, IconButton } from "../../lib/components/ds-button";
+import { Badge } from "../../lib/components/ds-badge";
+import { Tabs } from "../../lib/components/ds-tabs";
+import { DSTable, type TableColumn } from "../../lib/components/ds-table";
 import { Pagination } from "../../lib/components/ds-pagination";
 import { StatCard } from "../../lib/components/ds-statistic";
-import { Avatar } from "../../lib/components/ssk-avatar";
+import { Avatar } from "../../lib/components/ds-avatar";
 
 // ─── Typography tokens (DS-aligned) ──────────────────────────────────────────
 

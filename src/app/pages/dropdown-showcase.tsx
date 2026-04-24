@@ -9,7 +9,7 @@ import {
   Zap,
   Info,
 } from "lucide-react";
-import { Dropdown, type DropdownOption } from "../../lib/components/ssk-dropdown";
+import { Dropdown, type DropdownOption } from "../../lib/components/ds-dropdown";
 import { useI18n } from "../i18n";
 import { Section, DemoCard, fontBody, fontLabel } from "./_showcase-factory";
 
