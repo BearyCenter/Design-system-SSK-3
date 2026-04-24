@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel } from "./_showcase-factory";
 import { OTPInput } from "../../lib/components/ds-otpinput";
-import { DSButton } from "../../lib/components/ds-button";
+import { DSButton } from "../../lib/components/ssk-button";
 
 export function OTPInputShowcase() {
   const [otp1, setOtp1] = useState("");

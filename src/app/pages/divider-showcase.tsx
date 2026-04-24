@@ -1,7 +1,7 @@
 import React from "react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel, smallLabel } from "./_showcase-factory";
 import { Divider } from "../../lib/components/ds-divider";
-import { DSButton } from "../../lib/components/ds-button";
+import { DSButton } from "../../lib/components/ssk-button";
 
 export function DividerShowcase() {
   return (

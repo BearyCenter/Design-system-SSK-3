@@ -1,9 +1,9 @@
 import React from "react";
 import { PageHeader as ShowcasePageHeader, Section, DemoBox, APITable } from "./_showcase-factory";
 import { PageHeader } from "../../lib/components/ds-pageheader";
-import { DSButton } from "../../lib/components/ds-button";
+import { DSButton } from "../../lib/components/ssk-button";
 import { Breadcrumb } from "../../lib/components/ds-breadcrumb";
-import { Tabs } from "../../lib/components/ds-tabs";
+import { Tabs } from "../../lib/components/ssk-tabs";
 
 export function PageHeaderShowcase() {
   return (

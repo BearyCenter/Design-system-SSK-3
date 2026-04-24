@@ -9,38 +9,38 @@ export function DS3BadgeShowcase() {
           <Layers size={14} /><span>DS 3.0</span><ChevronRight size={12} /><span>Badge</span>
         </div>
         <h2 className="text-foreground" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-h2)", fontWeight: "700", lineHeight: "1.2" }}>
-          Badge <code className="text-primary text-lg font-mono">ds-badge</code>
+          Badge <code className="text-primary text-lg font-mono">ssk-badge</code>
         </h2>
         <p className="text-muted-foreground mt-1 max-w-2xl" style={fontBody}>
           Label สำหรับแสดง status, category หรือ count
         </p>
       </div>
 
-      <ds-theme-provider brand="patona">
+      <ssk-theme-provider brand="patona">
         <Section title="Colors" description="สีต่างๆ ของ badge"
-          code={`<ds-badge>Default</ds-badge>\n<ds-badge color="success">Success</ds-badge>\n<ds-badge color="warning">Warning</ds-badge>\n<ds-badge color="danger">Danger</ds-badge>`}>
+          code={`<ssk-badge>Default</ssk-badge>\n<ssk-badge color="success">Success</ssk-badge>\n<ssk-badge color="warning">Warning</ssk-badge>\n<ssk-badge color="danger">Danger</ssk-badge>`}>
           <DemoCard label="Colors">
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              <ds-badge>Default</ds-badge>
-              <ds-badge color="success">Success</ds-badge>
-              <ds-badge color="warning">Warning</ds-badge>
-              <ds-badge color="danger">Danger</ds-badge>
-              <ds-badge color="info">Info</ds-badge>
+              <ssk-badge>Default</ssk-badge>
+              <ssk-badge color="success">Success</ssk-badge>
+              <ssk-badge color="warning">Warning</ssk-badge>
+              <ssk-badge color="danger">Danger</ssk-badge>
+              <ssk-badge color="info">Info</ssk-badge>
             </div>
           </DemoCard>
         </Section>
 
         <Section title="Sizes" description="sm / md / lg"
-          code={`<ds-badge size="sm">Small</ds-badge>\n<ds-badge size="md">Medium</ds-badge>\n<ds-badge size="lg">Large</ds-badge>`}>
+          code={`<ssk-badge size="sm">Small</ssk-badge>\n<ssk-badge size="md">Medium</ssk-badge>\n<ssk-badge size="lg">Large</ssk-badge>`}>
           <DemoCard label="Sizes">
             <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-              <ds-badge size="sm">Small</ds-badge>
-              <ds-badge size="md">Medium</ds-badge>
-              <ds-badge size="lg">Large</ds-badge>
+              <ssk-badge size="sm">Small</ssk-badge>
+              <ssk-badge size="md">Medium</ssk-badge>
+              <ssk-badge size="lg">Large</ssk-badge>
             </div>
           </DemoCard>
         </Section>
-      </ds-theme-provider>
+      </ssk-theme-provider>
 
       <APITable rows={[
         { prop: "color", type: "default | success | warning | danger | info", def: "default", desc: "สีของ badge" },

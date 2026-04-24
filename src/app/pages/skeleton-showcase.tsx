@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel } from "./_showcase-factory";
-import { Skeleton, SkeletonCard, SkeletonTable, SkeletonList } from "../../lib/components/ds-skeleton";
+import { Skeleton, SkeletonCard, SkeletonTable, SkeletonList } from "../../lib/components/ssk-skeleton";
 import { Switch } from "../../lib/components/ds-switch";
 
 /* ─── Showcase ─────────────────────────────────────────────────────────────── */

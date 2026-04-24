@@ -16,7 +16,7 @@ import {
   MoreHorizontal,
 } from "lucide-react";
 import { ActionDropdown, type ActionEntry } from "../components/action-dropdown";
-import { DSButton, IconButton } from "../../lib/components/ds-button";
+import { DSButton, IconButton } from "../../lib/components/ssk-button";
 import { useI18n } from "../i18n";
 import { Section, DemoCard, fontBody, fontLabel } from "./_showcase-factory";
 

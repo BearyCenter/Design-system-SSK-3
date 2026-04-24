@@ -28,7 +28,7 @@ function LineChartDemo() {
       (ref.current as any).labels = lineLabels;
     }
   }, []);
-  return <ds-line-chart ref={ref as any} style={{ display: "block", width: "100%", height: "280px" }}></ds-line-chart>;
+  return <ssk-line-chart ref={ref as any} style={{ display: "block", width: "100%", height: "280px" }}></ssk-line-chart>;
 }
 
 function BarChartDemo() {
@@ -39,7 +39,7 @@ function BarChartDemo() {
       (ref.current as any).labels = barLabels;
     }
   }, []);
-  return <ds-bar-chart ref={ref as any} style={{ display: "block", width: "100%", height: "280px" }}></ds-bar-chart>;
+  return <ssk-bar-chart ref={ref as any} style={{ display: "block", width: "100%", height: "280px" }}></ssk-bar-chart>;
 }
 
 function DonutChartDemo() {
@@ -49,7 +49,7 @@ function DonutChartDemo() {
       (ref.current as any).slices = donutSlices;
     }
   }, []);
-  return <ds-donut-chart ref={ref as any} style={{ display: "block", width: "320px", height: "320px" }}></ds-donut-chart>;
+  return <ssk-donut-chart ref={ref as any} style={{ display: "block", width: "320px", height: "320px" }}></ssk-donut-chart>;
 }
 
 export function DS3ChartsShowcase() {
@@ -60,35 +60,35 @@ export function DS3ChartsShowcase() {
           <Layers size={14} /><span>DS 3.0</span><ChevronRight size={12} /><span>Charts</span>
         </div>
         <h2 className="text-foreground" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-h2)", fontWeight: "700", lineHeight: "1.2" }}>
-          Charts <code className="text-primary text-lg font-mono">ds-line-chart / ds-bar-chart / ds-donut-chart</code>
+          Charts <code className="text-primary text-lg font-mono">ssk-line-chart / ssk-bar-chart / ssk-donut-chart</code>
         </h2>
         <p className="text-muted-foreground mt-1 max-w-2xl" style={fontBody}>
           Zero-dependency SVG charts — built into DS 3.0, ไม่ต้องติดตั้ง library เพิ่ม
         </p>
       </div>
 
-      <ds-app-shell-provider brand="patona">
-        <Section title="Line Chart" description="ds-line-chart — smooth Catmull-Rom curves, multi-series, responsive"
-          code={`// Set via ref (object property, not attribute)\nconst ref = useRef();\nuseEffect(() => {\n  ref.current.series = [{ label: "Revenue", values: [120,180,150,210,190] }];\n  ref.current.labels = ["Jan","Feb","Mar","Apr","May"];\n}, []);\n<ds-line-chart ref={ref}></ds-line-chart>`}>
+      <ssk-app-shell-provider brand="patona">
+        <Section title="Line Chart" description="ssk-line-chart — smooth Catmull-Rom curves, multi-series, responsive"
+          code={`// Set via ref (object property, not attribute)\nconst ref = useRef();\nuseEffect(() => {\n  ref.current.series = [{ label: "Revenue", values: [120,180,150,210,190] }];\n  ref.current.labels = ["Jan","Feb","Mar","Apr","May"];\n}, []);\n<ssk-line-chart ref={ref}></ssk-line-chart>`}>
           <DemoCard label="Line Chart">
             <LineChartDemo />
           </DemoCard>
         </Section>
 
-        <Section title="Bar Chart" description="ds-bar-chart — grouped multi-series"
-          code={`ref.current.series = [{ label: "Revenue", values: [300,450,380,500] }];\nref.current.labels = ["Q1","Q2","Q3","Q4"];\n<ds-bar-chart ref={ref}></ds-bar-chart>`}>
+        <Section title="Bar Chart" description="ssk-bar-chart — grouped multi-series"
+          code={`ref.current.series = [{ label: "Revenue", values: [300,450,380,500] }];\nref.current.labels = ["Q1","Q2","Q3","Q4"];\n<ssk-bar-chart ref={ref}></ssk-bar-chart>`}>
           <DemoCard label="Bar Chart">
             <BarChartDemo />
           </DemoCard>
         </Section>
 
-        <Section title="Donut Chart" description="ds-donut-chart — arc path with center label and legend"
-          code={`ref.current.slices = [\n  { label: "Orders", value: 45 },\n  { label: "Pending", value: 30 },\n];\n<ds-donut-chart ref={ref}></ds-donut-chart>`}>
+        <Section title="Donut Chart" description="ssk-donut-chart — arc path with center label and legend"
+          code={`ref.current.slices = [\n  { label: "Orders", value: 45 },\n  { label: "Pending", value: 30 },\n];\n<ssk-donut-chart ref={ref}></ssk-donut-chart>`}>
           <DemoCard label="Donut Chart">
             <DonutChartDemo />
           </DemoCard>
         </Section>
-      </ds-app-shell-provider>
+      </ssk-app-shell-provider>
 
       <APITable rows={[
         { prop: "series", type: "{ label, values, color? }[]", def: "[]", desc: "ข้อมูล series (line/bar) — set via ref" },

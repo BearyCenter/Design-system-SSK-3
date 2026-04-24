@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Package, Edit, Trash2 } from "lucide-react";
 import { PageHeader, Section, DemoBox, APITable, fontLabel } from "./_showcase-factory";
 import { AdvancedDataTable, type AdvancedColumn, type PaginationMeta, type SortOrder } from "../../lib/components/ds-advanced-table";
-import { Badge } from "../../lib/components/ds-badge";
-import { DSButton } from "../../lib/components/ds-button";
+import { Badge } from "../../lib/components/ssk-badge";
+import { DSButton } from "../../lib/components/ssk-button";
 
 // ─── Mock Data ────────────────────────────────────────────────────────────────
 

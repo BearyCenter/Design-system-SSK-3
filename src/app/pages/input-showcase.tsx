@@ -7,7 +7,7 @@ import {
   Globe,
   Lock,
 } from "lucide-react";
-import { DSInput, DSTextarea } from "../../lib/components/ds-input";
+import { DSInput, DSTextarea } from "../../lib/components/ssk-input";
 import { useI18n } from "../i18n";
 import { Section, DemoCard, fontBody, fontLabel } from "./_showcase-factory";
 
@@ -28,7 +28,7 @@ export function InputShowcase() {
       <Section
         title="Variants"
         description="Four visual variants for different form contexts."
-        code={`import { DSInput } from "./components/ds-input";
+        code={`import { DSInput } from "./components/ssk-input";
 
 <DSInput variant="default" placeholder="Default variant" label="Name" />
 <DSInput variant="outlined" placeholder="Outlined variant" label="Name" />
@@ -145,7 +145,7 @@ export function InputShowcase() {
       <Section
         title="Textarea"
         description="Multi-line text input with all the same states."
-        code={`import { DSTextarea } from "./components/ds-input";
+        code={`import { DSTextarea } from "./components/ssk-input";
 
 <DSTextarea label="Description" placeholder="Write a description…" helperText="Describe the item" />
 

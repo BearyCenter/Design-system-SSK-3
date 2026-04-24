@@ -49,7 +49,7 @@ function buildRegistry(): ComponentRegistryEntry[] {
     {
       id: "button",
       name: "DSButton",
-      importPath: "./components/ds-button",
+      importPath: "./components/ssk-button",
       importName: "DSButton",
       defaultChildren: "Click me",
       props: [
@@ -89,7 +89,7 @@ function buildRegistry(): ComponentRegistryEntry[] {
     {
       id: "badge",
       name: "Badge",
-      importPath: "./components/ds-badge",
+      importPath: "./components/ssk-badge",
       importName: "Badge",
       defaultChildren: "Badge",
       props: [
@@ -119,7 +119,7 @@ function buildRegistry(): ComponentRegistryEntry[] {
     {
       id: "input",
       name: "DSInput",
-      importPath: "./components/ds-input",
+      importPath: "./components/ssk-input",
       importName: "DSInput",
       props: [
         { name: "variant", type: "select", defaultValue: "default", options: ["default", "outlined", "filled", "ghost"], description: "Visual variant" },
@@ -303,7 +303,7 @@ function buildRegistry(): ComponentRegistryEntry[] {
     {
       id: "checkbox",
       name: "Checkbox",
-      importPath: "./components/ds-checkbox",
+      importPath: "./components/ssk-checkbox",
       importName: "Checkbox",
       props: [
         { name: "size", type: "select", defaultValue: "md", options: ["sm", "md", "lg"], description: "Checkbox size" },
@@ -325,7 +325,7 @@ function buildRegistry(): ComponentRegistryEntry[] {
     {
       id: "radio",
       name: "Radio",
-      importPath: "./components/ds-radio",
+      importPath: "./components/ssk-radio",
       importName: "RadioGroup",
       props: [
         { name: "size", type: "select", defaultValue: "md", options: ["sm", "md", "lg"], description: "Radio size" },
@@ -345,7 +345,7 @@ function buildRegistry(): ComponentRegistryEntry[] {
     {
       id: "alert",
       name: "Alert",
-      importPath: "./components/ds-alert",
+      importPath: "./components/ssk-alert",
       importName: "Alert",
       props: [
         { name: "variant", type: "select", defaultValue: "info", options: ["info", "success", "warning", "error"], description: "Alert severity" },

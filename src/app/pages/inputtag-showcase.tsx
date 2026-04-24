@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel } from "./_showcase-factory";
-import { TagInput } from "../../lib/components/ds-taginput";
+import { TagInput } from "../../lib/components/ssk-taginput";
 
 export function InputTagShowcase() {
   const [tags1, setTags1] = useState(["React", "TypeScript"]);

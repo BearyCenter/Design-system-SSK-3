@@ -12,9 +12,9 @@ import type { ShellUser, NavResolver, NavItem } from "../types/shell";
 import { PageHeader } from "../components/ds-pageheader";
 import { StatCard } from "../components/ds-statistic";
 import { FilterBar } from "../components/ds-filterbar";
-import { DSButton } from "../components/ds-button";
-import { Card, CardHeader, CardBody } from "../components/ds-card";
-import { Badge } from "../components/ds-badge";
+import { DSButton } from "../components/ssk-button";
+import { Card, CardHeader, CardBody } from "../components/ssk-card";
+import { Badge } from "../components/ssk-badge";
 import { AreaChart, DonutChart } from "../components/ds-chart";
 import { ThumbnailCell } from "../components/ds-imagegallery";
 import {

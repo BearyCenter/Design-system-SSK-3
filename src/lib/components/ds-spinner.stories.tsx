@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Spinner } from "./ds-spinner";
+import { Spinner } from "./ssk-spinner";
 
 const meta: Meta<typeof Spinner> = {
   title: "Components/Spinner",

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PageHeader, Section, DemoBox, APITable, smallLabel } from "./_showcase-factory";
 import { Stepper } from "../../lib/components/ds-stepper";
-import { DSButton } from "../../lib/components/ds-button";
+import { DSButton } from "../../lib/components/ssk-button";
 
 export function StepperShowcase() {
   const [step1, setStep1] = useState(1);

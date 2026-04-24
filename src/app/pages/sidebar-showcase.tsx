@@ -4,7 +4,7 @@ import {
   ShoppingCart, Briefcase, Building2,
 } from "lucide-react";
 import { PageHeader, Section, DemoBox, APITable, fontLabel, fontLabelBold, smallLabel } from "./_showcase-factory";
-import { Sidebar } from "../../lib/components/ds-sidebar";
+import { Sidebar } from "../../lib/components/ssk-sidebar";
 import SellsukiFull from "../../imports/SellsukiFull";
 import PatonaIcon from "../../imports/PatonaIcon";
 import PatonaFull from "../../imports/PatonaFull";

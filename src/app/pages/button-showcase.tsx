@@ -19,7 +19,7 @@ import {
   Mail,
   Globe,
 } from "lucide-react";
-import { DSButton, IconButton, ButtonGroup } from "../../lib/components/ds-button";
+import { DSButton, IconButton, ButtonGroup } from "../../lib/components/ssk-button";
 import { useI18n } from "../i18n";
 import { Section, DemoCard, fontBody, fontLabel } from "./_showcase-factory";
 
@@ -43,7 +43,7 @@ export function ButtonShowcase() {
       <Section
         title="Variants"
         description="Six variants for different semantic and visual purposes."
-        code={`import { DSButton } from "./components/ds-button";
+        code={`import { DSButton } from "./components/ssk-button";
 
 <DSButton variant="primary">Primary</DSButton>
 <DSButton variant="secondary">Secondary</DSButton>
@@ -101,7 +101,7 @@ export function ButtonShowcase() {
       <Section
         title="Icon Buttons"
         description="Compact square buttons with only an icon."
-        code={`import { IconButton } from "./components/ds-button";
+        code={`import { IconButton } from "./components/ssk-button";
 
 <IconButton icon={<Heart size={16} />} aria-label="Like" variant="ghost" />
 <IconButton icon={<Bell size={16} />} aria-label="Notifications" variant="outline" />
@@ -183,7 +183,7 @@ const [loading, setLoading] = useState(false);
       <Section
         title="Button Group"
         description="Group related actions together with connected borders."
-        code={`import { ButtonGroup } from "./components/ds-button";
+        code={`import { ButtonGroup } from "./components/ssk-button";
 
 <ButtonGroup>
   <DSButton variant="outline">Left</DSButton>

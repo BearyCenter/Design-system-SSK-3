@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Copy, Edit3, Trash2, Download, Share2, Archive, Star, MoreHorizontal, Settings, User, LogOut, ChevronRight, Keyboard, FileText, FolderPlus, Mail, MessageSquare, Globe } from "lucide-react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel, smallLabel } from "./_showcase-factory";
 import { Menu, MenuItem } from "../../lib/components/ds-menu";
-import { DSButton } from "../../lib/components/ds-button";
+import { DSButton } from "../../lib/components/ssk-button";
 
 /* ─── Showcase ────────────────────────────────────────────────────────────── */
 

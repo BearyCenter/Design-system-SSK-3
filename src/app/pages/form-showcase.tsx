@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { PageHeader, Section, DemoBox, APITable, fontLabel } from "./_showcase-factory";
 import { FormField, FormLabel, FormError, FormHelperText } from "../../lib/components/ds-form";
-import { DSInput, DSTextarea } from "../../lib/components/ds-input";
-import { DSButton } from "../../lib/components/ds-button";
+import { DSInput, DSTextarea } from "../../lib/components/ssk-input";
+import { DSButton } from "../../lib/components/ssk-button";
 
 export function FormShowcase() {
   const [name, setName] = useState("");

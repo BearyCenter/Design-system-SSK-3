@@ -9,7 +9,7 @@ import {
   AlertCircle,
   X,
 } from "lucide-react";
-import { DSCheckbox } from "./ds-checkbox";
+import { DSCheckbox } from "./ssk-checkbox";
 
 /* ─── Types ──────────────────────────────────────────────────────────────────── */
 

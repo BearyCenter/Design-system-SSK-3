@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Modal, ConfirmDialog } from "./ds-modal";
+import { Modal, ConfirmDialog } from "./ssk-modal";
 import { useState } from "react";
 
 const meta: Meta<typeof Modal> = {

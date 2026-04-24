@@ -1,8 +1,8 @@
 import React from "react";
 import { MoreHorizontal, Heart, Share2, ArrowRight, User, Settings } from "lucide-react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel, fontLabelBold, smallLabel, btnStyle } from "./_showcase-factory";
-import { Card, CardHeader, CardBody, CardFooter } from "../../lib/components/ds-card";
-import { DSButton, IconButton } from "../../lib/components/ds-button";
+import { Card, CardHeader, CardBody, CardFooter } from "../../lib/components/ssk-card";
+import { DSButton, IconButton } from "../../lib/components/ssk-button";
 
 export function CardShowcase() {
   return (

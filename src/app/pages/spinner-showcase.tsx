@@ -1,7 +1,7 @@
 import React from "react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel } from "./_showcase-factory";
-import { Spinner } from "../../lib/components/ds-spinner";
-import { DSButton } from "../../lib/components/ds-button";
+import { Spinner } from "../../lib/components/ssk-spinner";
+import { DSButton } from "../../lib/components/ssk-button";
 
 export function SpinnerShowcase() {
   return (

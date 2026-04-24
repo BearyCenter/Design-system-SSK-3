@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Badge } from "./ds-badge";
+import { Badge } from "./ssk-badge";
 import { Star } from "lucide-react";
 
 const meta: Meta<typeof Badge> = {

@@ -17,9 +17,9 @@ import {
   ShoppingCart, Package, Users, Settings, BarChart2,
   Tag, Truck, CreditCard, Bell, AlertTriangle,
 } from "lucide-react";
-import { Badge } from "../components/ds-badge";
-import { Card, CardHeader, CardBody } from "../components/ds-card";
-import { Spinner } from "../components/ds-spinner";
+import { Badge } from "../components/ssk-badge";
+import { Card, CardHeader, CardBody } from "../components/ssk-card";
+import { Spinner } from "../components/ssk-spinner";
 
 // ─── Fixtures ─────────────────────────────────────────────────────────────────
 

@@ -9,57 +9,57 @@ export function DS3ButtonShowcase() {
           <Layers size={14} /><span>DS 3.0</span><ChevronRight size={12} /><span>Button</span>
         </div>
         <h2 className="text-foreground" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-h2)", fontWeight: "700", lineHeight: "1.2" }}>
-          Button <code className="text-primary text-lg font-mono">ds-button</code>
+          Button <code className="text-primary text-lg font-mono">ssk-button</code>
         </h2>
         <p className="text-muted-foreground mt-1 max-w-2xl" style={fontBody}>
           Lit Web Component — ใช้ทำ primary action ทุกประเภท รองรับ variant, size, loading, disabled
         </p>
       </div>
 
-      <ds-theme-provider brand="patona">
+      <ssk-theme-provider brand="patona">
         <Section title="Variants" description="รูปแบบต่างๆ ของ button"
-          code={`<ds-button variant="solid">Solid</ds-button>\n<ds-button variant="outline">Outline</ds-button>\n<ds-button variant="ghost">Ghost</ds-button>\n<ds-button variant="solid-light">Solid Light</ds-button>`}>
+          code={`<ssk-button variant="solid">Solid</ssk-button>\n<ssk-button variant="outline">Outline</ssk-button>\n<ssk-button variant="ghost">Ghost</ssk-button>\n<ssk-button variant="solid-light">Solid Light</ssk-button>`}>
           <DemoCard label="All variants">
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <ds-button variant="solid">Solid</ds-button>
-              <ds-button variant="outline">Outline</ds-button>
-              <ds-button variant="ghost">Ghost</ds-button>
-              <ds-button variant="solid-light">Solid Light</ds-button>
+              <ssk-button variant="solid">Solid</ssk-button>
+              <ssk-button variant="outline">Outline</ssk-button>
+              <ssk-button variant="ghost">Ghost</ssk-button>
+              <ssk-button variant="solid-light">Solid Light</ssk-button>
             </div>
           </DemoCard>
         </Section>
 
         <Section title="Colors" description="themeColor — primary, danger, success, warning"
-          code={`<ds-button themeColor="primary">Primary</ds-button>\n<ds-button themeColor="danger">Danger</ds-button>\n<ds-button themeColor="success">Success</ds-button>`}>
+          code={`<ssk-button themeColor="primary">Primary</ssk-button>\n<ssk-button themeColor="danger">Danger</ssk-button>\n<ssk-button themeColor="success">Success</ssk-button>`}>
           <DemoCard label="Colors">
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <ds-button themeColor="primary">Primary</ds-button>
-              <ds-button themeColor="danger">Danger</ds-button>
-              <ds-button themeColor="success">Success</ds-button>
+              <ssk-button themeColor="primary">Primary</ssk-button>
+              <ssk-button themeColor="danger">Danger</ssk-button>
+              <ssk-button themeColor="success">Success</ssk-button>
             </div>
           </DemoCard>
         </Section>
 
         <Section title="Sizes" description="sm / md / lg"
-          code={`<ds-button size="sm">Small</ds-button>\n<ds-button size="md">Medium</ds-button>\n<ds-button size="lg">Large</ds-button>`}>
+          code={`<ssk-button size="sm">Small</ssk-button>\n<ssk-button size="md">Medium</ssk-button>\n<ssk-button size="lg">Large</ssk-button>`}>
           <DemoCard label="Sizes">
             <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-              <ds-button size="sm">Small</ds-button>
-              <ds-button size="md">Medium</ds-button>
-              <ds-button size="lg">Large</ds-button>
+              <ssk-button size="sm">Small</ssk-button>
+              <ssk-button size="md">Medium</ssk-button>
+              <ssk-button size="lg">Large</ssk-button>
             </div>
           </DemoCard>
         </Section>
 
         <Section title="States" description="disabled"
-          code={`<ds-button disabled>Disabled</ds-button>`}>
+          code={`<ssk-button disabled>Disabled</ssk-button>`}>
           <DemoCard label="States">
             <div style={{ display: "flex", gap: "12px" }}>
-              <ds-button disabled>Disabled</ds-button>
+              <ssk-button disabled>Disabled</ssk-button>
             </div>
           </DemoCard>
         </Section>
-      </ds-theme-provider>
+      </ssk-theme-provider>
 
       <APITable rows={[
         { prop: "variant", type: "solid | outline | ghost | solid-light", def: "solid", desc: "รูปแบบ button" },

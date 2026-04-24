@@ -7,36 +7,36 @@ export {
   DSButton as Button,
   IconButton,
   ButtonGroup,
-} from "./components/ds-button";
-export type { DSButtonProps, DSButtonProps as ButtonProps, IconButtonProps, ButtonSize, ButtonVariant } from "./components/ds-button";
+} from "./components/ssk-button";
+export type { DSButtonProps, DSButtonProps as ButtonProps, IconButtonProps, ButtonSize, ButtonVariant } from "./components/ssk-button";
 
 // ── Input ────────────────────────────────────────────────────────────────────
-export { DSInput, DSInput as Input, DSTextarea, DSTextarea as Textarea } from "./components/ds-input";
-export type { DSInputProps, DSInputProps as InputProps, DSTextareaProps, DSTextareaProps as TextareaProps, InputSize, InputVariant, InputState } from "./components/ds-input";
+export { DSInput, DSInput as Input, DSTextarea, DSTextarea as Textarea } from "./components/ssk-input";
+export type { DSInputProps, DSInputProps as InputProps, DSTextareaProps, DSTextareaProps as TextareaProps, InputSize, InputVariant, InputState } from "./components/ssk-input";
 
 // ── Alert & Toast ────────────────────────────────────────────────────────────
-export { Alert, ToastContainer, toast } from "./components/ds-alert";
-export type { AlertVariant } from "./components/ds-alert";
+export { Alert, ToastContainer, toast } from "./components/ssk-alert";
+export type { AlertVariant } from "./components/ssk-alert";
 
 // ── Badge ────────────────────────────────────────────────────────────────────
-export { Badge } from "./components/ds-badge";
-export type { BadgeVariant, BadgeSize } from "./components/ds-badge";
+export { Badge } from "./components/ssk-badge";
+export type { BadgeVariant, BadgeSize } from "./components/ssk-badge";
 
 // ── Checkbox ─────────────────────────────────────────────────────────────────
-export { DSCheckbox, DSCheckbox as Checkbox, CheckboxGroup } from "./components/ds-checkbox";
-export type { CheckboxSize } from "./components/ds-checkbox";
+export { DSCheckbox, DSCheckbox as Checkbox, CheckboxGroup } from "./components/ssk-checkbox";
+export type { CheckboxSize } from "./components/ssk-checkbox";
 
 // ── Radio ────────────────────────────────────────────────────────────────────
-export { DSRadio, DSRadio as Radio, RadioGroup } from "./components/ds-radio";
-export type { RadioSize } from "./components/ds-radio";
+export { DSRadio, DSRadio as Radio, RadioGroup } from "./components/ssk-radio";
+export type { RadioSize } from "./components/ssk-radio";
 
 // ── DatePicker ───────────────────────────────────────────────────────────────
 export { DatePicker } from "./components/ds-datepicker";
 export type { DatePickerProps, DatePickerSize, DatePickerVariant, DatePickerState, DatePickerMode } from "./components/ds-datepicker";
 
 // ── Modal ────────────────────────────────────────────────────────────────────
-export { Modal, ConfirmDialog } from "./components/ds-modal";
-export type { ModalSize } from "./components/ds-modal";
+export { Modal, ConfirmDialog } from "./components/ssk-modal";
+export type { ModalSize } from "./components/ssk-modal";
 
 // ── Pagination ───────────────────────────────────────────────────────────────
 export { Pagination } from "./components/ds-pagination";
@@ -47,28 +47,28 @@ export { SearchField } from "./components/ds-search";
 export type { SearchSize, SearchVariant } from "./components/ds-search";
 
 // ── Table ────────────────────────────────────────────────────────────────────
-export { DSTable, DSTable as Table } from "./components/ds-table";
-export type { TableColumn, TableSize } from "./components/ds-table";
+export { DSTable, DSTable as Table } from "./components/ssk-table";
+export type { TableColumn, TableSize } from "./components/ssk-table";
 
 // ── Tabs ─────────────────────────────────────────────────────────────────────
-export { Tabs } from "./components/ds-tabs";
-export type { TabItem, TabVariant, TabSize } from "./components/ds-tabs";
+export { Tabs } from "./components/ssk-tabs";
+export type { TabItem, TabVariant, TabSize } from "./components/ssk-tabs";
 
 // ── Accordion ────────────────────────────────────────────────────────────────
 export { Accordion, AccordionItem } from "./components/ds-accordion";
 export type { AccordionProps, AccordionItemProps, AccordionType } from "./components/ds-accordion";
 
 // ── Avatar ───────────────────────────────────────────────────────────────────
-export { Avatar, AvatarGroup } from "./components/ds-avatar";
-export type { AvatarProps, AvatarGroupProps, AvatarSize, AvatarStatus } from "./components/ds-avatar";
+export { Avatar, AvatarGroup } from "./components/ssk-avatar";
+export type { AvatarProps, AvatarGroupProps, AvatarSize, AvatarStatus } from "./components/ssk-avatar";
 
 // ── Breadcrumb ───────────────────────────────────────────────────────────────
 export { Breadcrumb } from "./components/ds-breadcrumb";
 export type { BreadcrumbProps, BreadcrumbItem, BreadcrumbSeparator, BreadcrumbSize } from "./components/ds-breadcrumb";
 
 // ── Card ─────────────────────────────────────────────────────────────────────
-export { Card, CardHeader, CardBody, CardFooter } from "./components/ds-card";
-export type { CardProps, CardHeaderProps } from "./components/ds-card";
+export { Card, CardHeader, CardBody, CardFooter } from "./components/ssk-card";
+export type { CardProps, CardHeaderProps } from "./components/ssk-card";
 
 // ── ColorPicker ──────────────────────────────────────────────────────────────
 export { ColorPicker } from "./components/ds-colorpicker";
@@ -83,8 +83,8 @@ export { Drawer } from "./components/ds-drawer";
 export type { DrawerProps, DrawerSide, DrawerSize } from "./components/ds-drawer";
 
 // ── Dropdown / Select ────────────────────────────────────────────────────────
-export { Dropdown } from "./components/ds-dropdown";
-export type { DropdownProps, DropdownOption, DropdownSize, DropdownVariant, DropdownState } from "./components/ds-dropdown";
+export { Dropdown } from "./components/ssk-dropdown";
+export type { DropdownProps, DropdownOption, DropdownSize, DropdownVariant, DropdownState } from "./components/ssk-dropdown";
 
 // ── EmptyState ───────────────────────────────────────────────────────────────
 export { EmptyState } from "./components/ds-emptystate";
@@ -119,18 +119,18 @@ export { Rating } from "./components/ds-rating";
 export type { RatingProps, RatingSize, RatingIcon } from "./components/ds-rating";
 
 // ── Sidebar ──────────────────────────────────────────────────────────────────
-export { Sidebar } from "./components/ds-sidebar";
-export type { SidebarProps, SidebarItem, SidebarGroup, SidebarBrand } from "./components/ds-sidebar";
-export { SidebarAccountSwitcher } from "./components/ds-sidebar-account";
-export type { SidebarAccountSwitcherProps, SidebarAccountItem } from "./components/ds-sidebar-account";
+export { Sidebar } from "./components/ssk-sidebar";
+export type { SidebarProps, SidebarItem, SidebarGroup, SidebarBrand } from "./components/ssk-sidebar";
+export { SidebarAccountSwitcher } from "./components/ssk-sidebar-account";
+export type { SidebarAccountSwitcherProps, SidebarAccountItem } from "./components/ssk-sidebar-account";
 
 // ── Skeleton ─────────────────────────────────────────────────────────────────
-export { Skeleton, SkeletonCard, SkeletonTable, SkeletonList } from "./components/ds-skeleton";
-export type { SkeletonProps, SkeletonVariant } from "./components/ds-skeleton";
+export { Skeleton, SkeletonCard, SkeletonTable, SkeletonList } from "./components/ssk-skeleton";
+export type { SkeletonProps, SkeletonVariant } from "./components/ssk-skeleton";
 
 // ── Spinner ──────────────────────────────────────────────────────────────────
-export { Spinner } from "./components/ds-spinner";
-export type { SpinnerProps, SpinnerSize } from "./components/ds-spinner";
+export { Spinner } from "./components/ssk-spinner";
+export type { SpinnerProps, SpinnerSize } from "./components/ssk-spinner";
 
 // ── Statistic ────────────────────────────────────────────────────────────────
 export { Statistic, StatCard } from "./components/ds-statistic";
@@ -145,12 +145,12 @@ export { Switch } from "./components/ds-switch";
 export type { SwitchProps, SwitchSize, SwitchColor } from "./components/ds-switch";
 
 // ── Tag ──────────────────────────────────────────────────────────────────────
-export { Tag } from "./components/ds-tag";
-export type { TagProps, TagColor, TagSize } from "./components/ds-tag";
+export { Tag } from "./components/ssk-tag";
+export type { TagProps, TagColor, TagSize } from "./components/ssk-tag";
 
 // ── TagInput ─────────────────────────────────────────────────────────────────
-export { TagInput } from "./components/ds-taginput";
-export type { TagInputProps, TagInputVariant } from "./components/ds-taginput";
+export { TagInput } from "./components/ssk-taginput";
+export type { TagInputProps, TagInputVariant } from "./components/ssk-taginput";
 
 // ── Timeline ─────────────────────────────────────────────────────────────────
 export { Timeline } from "./components/ds-timeline";
@@ -215,8 +215,8 @@ export { ChoiceCard, ChoiceCardGroup } from "./components/ds-choicecard";
 export type { ChoiceCardProps, ChoiceCardGroupProps } from "./components/ds-choicecard";
 
 // ── RadioCard ────────────────────────────────────────────────────────────────
-export { RadioCard } from "./components/ds-radiocard";
-export type { RadioCardProps, RadioCardOption } from "./components/ds-radiocard";
+export { RadioCard } from "./components/ssk-radiocard";
+export type { RadioCardProps, RadioCardOption } from "./components/ssk-radiocard";
 
 // ── RepeatableFieldList ──────────────────────────────────────────────────────
 export { RepeatableFieldList } from "./components/ds-repeatablefield";
@@ -265,7 +265,7 @@ export type {
   BreadcrumbEntry,
 } from "./types/shell";
 // Note: SidebarGroup for AppShell nav is exported from "./types/shell" as ShellSidebarGroup
-// The existing SidebarGroup from ds-sidebar remains for standalone Sidebar component usage
+// The existing SidebarGroup from ssk-sidebar remains for standalone Sidebar component usage
 export type { ShellSidebarGroup } from "./types/shell";
 export {
   sellsukiBrandConfig,

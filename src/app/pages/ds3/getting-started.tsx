@@ -106,15 +106,15 @@ export function DS3GettingStartedPage() {
           <div className="text-muted-foreground">{"// main.ts — import once at root"}</div>
           <div className="text-primary">{"import '@uxuissk/design-system-core';"}</div>
           <div className="mt-3 text-muted-foreground">{"<!-- Wrap root with provider — injects all tokens -->"}</div>
-          <div className="text-foreground">{'<ds-app-shell-provider brand="patona">'}</div>
-          <div className="text-foreground pl-4">{'<ds-button>Hello DS 3.0</ds-button>'}</div>
-          <div className="text-foreground">{'</ds-app-shell-provider>'}</div>
+          <div className="text-foreground">{'<ssk-app-shell-provider brand="patona">'}</div>
+          <div className="text-foreground pl-4">{'<ssk-button>Hello DS 3.0</ssk-button>'}</div>
+          <div className="text-foreground">{'</ssk-app-shell-provider>'}</div>
         </div>
 
         <div className="mt-4 border border-amber-200 bg-amber-50 dark:bg-amber-950/30 dark:border-amber-800 rounded-xl p-4 text-sm" style={fontBody}>
           <span className="font-semibold text-amber-700 dark:text-amber-400">⚠️ Required: </span>
           <span className="text-amber-700 dark:text-amber-300">
-            ทุก project ต้องครอบด้วย <code className="font-mono">{"<ds-app-shell-provider>"}</code> — หากไม่มี component จะไม่มีสีและ token
+            ทุก project ต้องครอบด้วย <code className="font-mono">{"<ssk-app-shell-provider>"}</code> — หากไม่มี component จะไม่มีสีและ token
           </span>
         </div>
       </div>
@@ -139,19 +139,19 @@ export function DS3GettingStartedPage() {
           Live Demo — DS 3.0 Components
         </h3>
         <div className="border border-border rounded-xl p-6 space-y-4">
-          <ds-app-shell-provider brand="patona">
+          <ssk-app-shell-provider brand="patona">
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
-              <ds-button>Primary</ds-button>
-              <ds-button variant="outline">Outline</ds-button>
-              <ds-button variant="ghost">Ghost</ds-button>
-              <ds-badge>Badge</ds-badge>
-              <ds-badge color="success">Success</ds-badge>
-              <ds-spinner size="sm"></ds-spinner>
+              <ssk-button>Primary</ssk-button>
+              <ssk-button variant="outline">Outline</ssk-button>
+              <ssk-button variant="ghost">Ghost</ssk-button>
+              <ssk-badge>Badge</ssk-badge>
+              <ssk-badge color="success">Success</ssk-badge>
+              <ssk-spinner size="sm"></ssk-spinner>
             </div>
             <div style={{ marginTop: "16px" }}>
-              <ds-input placeholder="DS 3.0 input component" style={{ width: "300px" }}></ds-input>
+              <ssk-input placeholder="DS 3.0 input component" style={{ width: "300px" }}></ssk-input>
             </div>
-          </ds-app-shell-provider>
+          </ssk-app-shell-provider>
         </div>
       </div>
     </div>

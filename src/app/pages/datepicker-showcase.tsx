@@ -3,7 +3,7 @@ import { Layers, ChevronRight } from "lucide-react";
 import { DatePicker } from "../../lib/components/ds-datepicker";
 import { useI18n } from "../i18n";
 import { Section, DemoCard, fontBody, fontLabel } from "./_showcase-factory";
-import { DSButton } from "../../lib/components/ds-button";
+import { DSButton } from "../../lib/components/ssk-button";
 
 export function DatePickerShowcase() {
   const { t } = useI18n();

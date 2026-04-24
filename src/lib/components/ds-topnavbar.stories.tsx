@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { TopNavbar } from "./ds-topnavbar";
-import { Sidebar } from "./ds-sidebar";
+import { Sidebar } from "./ssk-sidebar";
 import { Home, Package, ShoppingCart, Users, Settings } from "lucide-react";
 import SellsukiFull from "../../imports/SellsukiFull";
 

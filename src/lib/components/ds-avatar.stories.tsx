@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar, AvatarGroup } from "./ds-avatar";
+import { Avatar, AvatarGroup } from "./ssk-avatar";
 
 const meta: Meta<typeof Avatar> = {
   title: "Components/Avatar",

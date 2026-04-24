@@ -2,7 +2,7 @@ import React from "react";
 import { Info, HelpCircle } from "lucide-react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel, smallLabel } from "./_showcase-factory";
 import { Tooltip } from "../../lib/components/ds-tooltip";
-import { DSButton } from "../../lib/components/ds-button";
+import { DSButton } from "../../lib/components/ssk-button";
 
 export function TooltipShowcase() {
   return (

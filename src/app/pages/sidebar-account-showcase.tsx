@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PageHeader, Section, DemoBox, DemoCard, APITable, fontLabel, smallLabel } from "./_showcase-factory";
-import { SidebarAccountSwitcher } from "../../lib/components/ds-sidebar-account";
-import type { SidebarAccountItem } from "../../lib/components/ds-sidebar-account";
+import { SidebarAccountSwitcher } from "../../lib/components/ssk-sidebar-account";
+import type { SidebarAccountItem } from "../../lib/components/ssk-sidebar-account";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────────── */
 
