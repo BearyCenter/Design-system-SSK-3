@@ -37,6 +37,15 @@ interface ChangelogVersion {
 
 export const changelogVersions: ChangelogVersion[] = [
   {
+    version: "3.1.1",
+    date: "April 24, 2026",
+    summary: "ปรับ font-size token ให้ตรงกับ DS 3.0 spec — xs 16px, sm 18px, md 20px, lg 24px, xl 28px",
+    tags: ["improved"],
+    features: [
+      { icon: <Paintbrush size={16} />, title: "Font Size Token Update (--ssk-font-size-*)", description: "ปรับค่า global font-size token ให้ตรงกับ DS 3.0 design spec: xs=16px, sm=18px, md=20px, lg=24px, xl=28px — ส่งผลต่อทุก component ที่ใช้ size prop เช่น Button, Badge, Tag, Input" },
+    ],
+  },
+  {
     version: "3.1.0",
     date: "April 24, 2026",
     summary: "ssk-* เป็น prefix เดียว — ลบ dual registration ออก ทำให้ architecture สะอาด ไม่มี NotSupportedError และ Dev team ย้ายมาได้ทันทีโดยไม่ต้องเรียนรู้ prefix ใหม่",
