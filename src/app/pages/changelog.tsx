@@ -43,6 +43,7 @@ export const changelogVersions: ChangelogVersion[] = [
     tags: ["improved"],
     features: [
       { icon: <Paintbrush size={16} />, title: "Font Size Token Update (--ssk-font-size-*)", description: "ปรับค่า global font-size token ให้ตรงกับ DS 3.0 design spec: xs=16px, sm=18px, md=20px, lg=24px, xl=28px — ส่งผลต่อทุก component ที่ใช้ size prop เช่น Button, Badge, Tag, Input" },
+      { icon: <Layers size={16} />, title: "DS 3.0 Showcase — Lit Web Component Mode", description: "Badge '3.0' ใน sidebar หมายถึง Lit Web Component implementation ไม่ใช่ component ใหม่ — Button และ Input มีอยู่ใน DS 2.0 แต่ DS 3.0 section แสดง version ที่ built ด้วย Lit และ ssk-* Web Components โดยเฉพาะ เข้าถึงได้โดยเลือก mode '3.0' ที่หน้า entry" },
     ],
   },
   {
