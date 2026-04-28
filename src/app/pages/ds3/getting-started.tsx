@@ -133,25 +133,172 @@ export function DS3GettingStartedPage() {
         </div>
       </div>
 
-      {/* Live Demo */}
+      {/* AI Integration — MCP & REST */}
       <div>
-        <h3 className="text-foreground font-semibold mb-4" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-h4)" }}>
-          Live Demo — DS 3.0 Components
+        <h3 className="text-foreground font-semibold mb-2" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-h4)" }}>
+          AI Integration — Vibecode ด้วย MCP
         </h3>
-        <div className="border border-border rounded-xl p-6 space-y-4">
-          <ssk-app-shell-provider brand="patona">
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
-              <ssk-button>Primary</ssk-button>
-              <ssk-button variant="outline">Outline</ssk-button>
-              <ssk-button variant="ghost">Ghost</ssk-button>
-              <ssk-badge>Badge</ssk-badge>
-              <ssk-badge color="success">Success</ssk-badge>
-              <ssk-spinner size="sm"></ssk-spinner>
+        <p className="text-muted-foreground mb-4" style={{ fontFamily: "var(--font-p)", fontSize: "var(--text-p)" }}>
+          ติดตั้ง <code className="text-primary font-mono text-sm">@uxuissk/ds3-mcp</code> เพื่อให้ AI (Claude, Cursor, Codex, ChatGPT) เข้าใจ DS 3.0 และสร้าง code ที่ใช้ ssk-* ถูกต้อง 100%
+        </p>
+
+        {/* Endpoints summary */}
+        <div className="border border-border rounded-xl p-6 mb-4 bg-muted/20">
+          <h4 className="text-foreground font-semibold mb-3" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-label)" }}>
+            🌐 Endpoints
+          </h4>
+          <div className="space-y-2" style={{ fontFamily: "var(--font-mono)", fontSize: "13px" }}>
+            <div>
+              <span className="text-muted-foreground">Streamable HTTP MCP:</span>{" "}
+              <code className="text-primary">https://ds3-mcp.vercel.app/api/mcp</code>
             </div>
-            <div style={{ marginTop: "16px" }}>
-              <ssk-input placeholder="DS 3.0 input component" style={{ width: "300px" }}></ssk-input>
+            <div>
+              <span className="text-muted-foreground">stdio MCP (npm):</span>{" "}
+              <code className="text-primary">npx -y @uxuissk/ds3-mcp</code>
             </div>
-          </ssk-app-shell-provider>
+            <div>
+              <span className="text-muted-foreground">REST API:</span>{" "}
+              <code className="text-primary">https://ds3-mcp.vercel.app/api/v1/*</code>
+            </div>
+            <div>
+              <span className="text-muted-foreground">OpenAPI:</span>{" "}
+              <code className="text-primary">https://ds3-mcp.vercel.app/api/v1/openapi.json</code>
+            </div>
+          </div>
+        </div>
+
+        {/* Setup per AI */}
+        <h4 className="text-foreground font-semibold mb-3 mt-6" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-label)" }}>
+          🔌 Setup ต่อ AI
+        </h4>
+
+        <div className="grid md:grid-cols-2 gap-4 mb-4">
+          {/* Claude Code / Cursor */}
+          <div className="border border-border rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-label)" }}>Claude Code / Cursor</span>
+              <ssk-badge color="info">stdio</ssk-badge>
+            </div>
+            <p className="text-muted-foreground text-sm mb-3">เพิ่มใน <code className="font-mono">.mcp.json</code></p>
+            <pre className="bg-muted rounded-lg p-3 text-xs overflow-x-auto" style={{ fontFamily: "var(--font-mono)" }}>
+{`{
+  "mcpServers": {
+    "ds3": {
+      "command": "npx",
+      "args": ["-y", "@uxuissk/ds3-mcp"]
+    }
+  }
+}`}
+            </pre>
+          </div>
+
+          {/* claude.ai */}
+          <div className="border border-border rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-label)" }}>claude.ai (web)</span>
+              <ssk-badge color="success">HTTP</ssk-badge>
+            </div>
+            <p className="text-muted-foreground text-sm mb-3">Settings → Integrations → Add custom MCP</p>
+            <pre className="bg-muted rounded-lg p-3 text-xs overflow-x-auto" style={{ fontFamily: "var(--font-mono)" }}>
+{`URL: https://ds3-mcp.vercel.app/api/mcp
+Name: Sellsuki DS 3.0`}
+            </pre>
+          </div>
+
+          {/* Codex */}
+          <div className="border border-border rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-label)" }}>Codex (OpenAI)</span>
+              <ssk-badge color="success">HTTP</ssk-badge>
+            </div>
+            <p className="text-muted-foreground text-sm mb-3">เพิ่มใน <code className="font-mono">~/.codex/config.toml</code></p>
+            <pre className="bg-muted rounded-lg p-3 text-xs overflow-x-auto" style={{ fontFamily: "var(--font-mono)" }}>
+{`[mcp_servers.ds3]
+url = "https://ds3-mcp.vercel.app/api/mcp"`}
+            </pre>
+          </div>
+
+          {/* ChatGPT */}
+          <div className="border border-border rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-label)" }}>ChatGPT</span>
+              <ssk-badge color="warning">Custom GPT</ssk-badge>
+            </div>
+            <p className="text-muted-foreground text-sm mb-3">Create Custom GPT → Action → Import OpenAPI</p>
+            <pre className="bg-muted rounded-lg p-3 text-xs overflow-x-auto" style={{ fontFamily: "var(--font-mono)" }}>
+{`https://ds3-mcp.vercel.app/api/v1/openapi.json`}
+            </pre>
+          </div>
+        </div>
+
+        {/* Capabilities */}
+        <h4 className="text-foreground font-semibold mb-3 mt-6" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-label)" }}>
+          🛠️ MCP Capabilities
+        </h4>
+        <div className="grid md:grid-cols-3 gap-3 mb-4">
+          <div className="border border-border rounded-xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-label)" }}>Tools</span>
+              <ssk-badge>11</ssk-badge>
+            </div>
+            <p className="text-muted-foreground text-sm">list_components, get_component, get_design_tokens, suggest, validate, generate_form, ...</p>
+          </div>
+          <div className="border border-border rounded-xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-label)" }}>Resources</span>
+              <ssk-badge>90+</ssk-badge>
+            </div>
+            <p className="text-muted-foreground text-sm">ds3://components/*, ds3://tokens/*, ds3://brands/* — markdown docs ของแต่ละ component</p>
+          </div>
+          <div className="border border-border rounded-xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-label)" }}>Prompts</span>
+              <ssk-badge>7</ssk-badge>
+            </div>
+            <p className="text-muted-foreground text-sm">create_login_form, create_dashboard, create_crud_page, create_table_view, create_onboarding_flow, ...</p>
+          </div>
+        </div>
+
+        {/* Quick Test */}
+        <h4 className="text-foreground font-semibold mb-3 mt-6" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-label)" }}>
+          🧪 Quick Test (verify ก่อนใช้)
+        </h4>
+        <div className="border border-border rounded-xl p-5 mb-4">
+          <p className="text-muted-foreground text-sm mb-2">Test endpoint:</p>
+          <pre className="bg-muted rounded-lg p-3 text-xs overflow-x-auto mb-3" style={{ fontFamily: "var(--font-mono)" }}>
+{`curl https://ds3-mcp.vercel.app/api/mcp`}
+          </pre>
+          <p className="text-muted-foreground text-sm mb-2">Expected response:</p>
+          <pre className="bg-muted rounded-lg p-3 text-xs overflow-x-auto" style={{ fontFamily: "var(--font-mono)" }}>
+{`{
+  "status": "ok",
+  "server": "ds3-mcp",
+  "version": "1.1.0",
+  "transport": "streamable-http",
+  "capabilities": ["tools", "resources", "prompts"]
+}`}
+          </pre>
+        </div>
+
+        {/* Sample Vibecode prompt */}
+        <h4 className="text-foreground font-semibold mb-3 mt-6" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-label)" }}>
+          💬 ลอง Vibecode (paste ใน AI ที่ register MCP แล้ว)
+        </h4>
+        <div className="border border-border rounded-xl p-5 bg-muted/20">
+          <pre className="text-sm" style={{ fontFamily: "var(--font-mono)", whiteSpace: "pre-wrap" }}>
+{`ขอช่วยทำหน้า login form สำหรับ Sellsuki CCS3
+ใช้ Design System DS 3.0 ของเรา (มี MCP ds3 ติดตั้งให้แล้ว)
+ลองเรียกดูเองว่ามี component อะไรบ้าง ใช้ brand ccs3
+ขอ HTML ที่เอาไปใช้ได้เลย`}
+          </pre>
+        </div>
+
+        <div className="mt-4 text-sm text-muted-foreground">
+          📚 ดูคู่มือเต็ม:{" "}
+          <a href="https://github.com/BearyCenter/ds3-mcp/blob/main/SETUP.md" target="_blank" rel="noopener" className="text-primary hover:underline">SETUP.md</a>{" • "}
+          <a href="https://github.com/BearyCenter/ds3-mcp/blob/main/HOW_TO_PO.md" target="_blank" rel="noopener" className="text-primary hover:underline">HOW_TO_PO</a>{" • "}
+          <a href="https://github.com/BearyCenter/ds3-mcp/blob/main/HOW_TO_UXUI.md" target="_blank" rel="noopener" className="text-primary hover:underline">HOW_TO_UXUI</a>{" • "}
+          <a href="https://github.com/BearyCenter/ds3-mcp/blob/main/HOW_TO_DEV.md" target="_blank" rel="noopener" className="text-primary hover:underline">HOW_TO_DEV</a>
         </div>
       </div>
     </div>
