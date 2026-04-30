@@ -53,7 +53,7 @@ export function DS3GettingStartedPage() {
 
       {/* Storybook link */}
       <a
-        href="https://sellsukidesignsystemv12.vercel.app"
+        href="https://bearycenter.github.io/SellsukiDesignsystem3.0/"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 border border-primary text-primary rounded-lg px-4 py-2 hover:bg-primary/5 transition-colors"
