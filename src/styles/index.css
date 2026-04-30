@@ -1,3 +1,9 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+/* Reset browser default monospace on code/pre — use DS 3.0 base font */
+code,
+pre {
+  font-family: var(--font-p, 'DB HeaventRounded', sans-serif);
+}
