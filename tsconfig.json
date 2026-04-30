@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/lib/**/*", "src/ds3-elements.d.ts"],
-  "exclude": ["node_modules", "dist", "src/app/**/*", "**/*.stories.tsx"]
+  "include": ["src/lib/**/*", "src/ds3-elements.d.ts", "src/app/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx"]
 }
