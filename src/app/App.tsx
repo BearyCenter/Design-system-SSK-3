@@ -137,6 +137,7 @@ import { EntryPage, type DsMode } from "./pages/entry-page";
 
 // ─── DS 3.0 Page Imports ──────────────────────────────────────────────────────
 import { DS3GettingStartedPage } from "./pages/ds3/getting-started";
+import { DS3DesignTokensPage } from "./pages/ds3/design-tokens";
 import { DS3ButtonShowcase } from "./pages/ds3/button-showcase";
 import { DS3InputShowcase } from "./pages/ds3/input-showcase";
 import { DS3BadgeShowcase } from "./pages/ds3/badge-showcase";
@@ -213,6 +214,7 @@ type PageId =
   | "ds21-roadmap"
   // DS 3.0 pages
   | "ds3-getting-started"
+  | "ds3-design-tokens"
   | "ds3-button"
   | "ds3-input"
   | "ds3-badge"
@@ -352,6 +354,7 @@ function buildSidebarGroups21(_t: (key: string) => string): SidebarGroup[] {
       items: [
         { id: "ds21-roadmap", label: "Upgrade Roadmap", icon: <Layers size={16} /> },
         { id: "ds3-getting-started", label: "Getting Started", icon: <BookOpen size={16} /> },
+        { id: "ds3-design-tokens", label: "Design Tokens", icon: <Palette size={16} />, badge: "3.0" },
         { id: "changelog", label: "Changelog", icon: <History size={16} />, badge: `v${latestChangelog.version}` },
       ],
     },
@@ -504,6 +507,7 @@ const PAGE_MAP: Record<PageId, React.ComponentType> = {
   "ds21-roadmap": Ds21RoadmapPage,
   // DS 3.0 pages
   "ds3-getting-started": DS3GettingStartedPage,
+  "ds3-design-tokens": DS3DesignTokensPage,
   "ds3-button": DS3ButtonShowcase,
   "ds3-input": DS3InputShowcase,
   "ds3-badge": DS3BadgeShowcase,
