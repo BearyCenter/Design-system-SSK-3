@@ -169,19 +169,21 @@ function ColorsSection({ brand }: { brand: Brand }) {
         {colorGroups.map((g) => (
           <div key={g.group}>
             <h4 className="text-foreground font-semibold mb-3" style={fontLabel}>{g.group}</h4>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col gap-2">
               {g.tokens.map((t) => (
-                <div key={t.token} className="flex flex-col items-center gap-1.5" style={{ width: 88 }}>
+                <div key={t.token} className="flex items-center gap-4 px-4 py-2 rounded-xl border border-border">
                   <div
-                    className="w-14 h-14 rounded-lg border border-black/8"
-                    style={{ background: `var(${t.token})`, boxShadow: "0 1px 4px rgba(0,0,0,0.12)" }}
+                    className="shrink-0 rounded-lg border border-black/8"
+                    style={{ width: 48, height: 48, background: `var(${t.token})`, boxShadow: "0 1px 4px rgba(0,0,0,0.12)" }}
                   />
-                  <span className="text-center leading-tight" style={{ fontFamily: "var(--font-p)", fontSize: "11px", color: "var(--text-secondary)" }}>
-                    {t.token}
-                  </span>
-                  <span className="text-center" style={{ fontFamily: "var(--font-p)", fontSize: "11px", color: "var(--text-primary)" }}>
-                    {t.label}
-                  </span>
+                  <div className="flex flex-col gap-0.5 min-w-0">
+                    <code style={{ fontFamily: "var(--font-p)", fontSize: "var(--font-size-caption, 18px)", color: "var(--text-primary)" }}>
+                      {t.token}
+                    </code>
+                    <span style={{ fontFamily: "var(--font-p)", fontSize: "var(--font-size-caption, 18px)", color: "var(--text-secondary)" }}>
+                      {t.label}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
