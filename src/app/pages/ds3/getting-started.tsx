@@ -91,7 +91,7 @@ export function DS3GettingStartedPage() {
         <h3 className="text-foreground font-semibold mb-4" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-h4)" }}>
           Installation
         </h3>
-        <div className="rounded-xl bg-muted/60 border border-border p-5 font-mono space-y-1">
+        <div className="rounded-xl bg-muted/60 border border-border p-5 space-y-1">
           <div className="text-muted-foreground"># Install DS 3.0</div>
           <div className="text-foreground">npm install @uxuissk/design-system-core@3.2.0</div>
         </div>
@@ -102,7 +102,7 @@ export function DS3GettingStartedPage() {
         <h3 className="text-foreground font-semibold mb-4" style={{ fontFamily: "var(--font-label)", fontSize: "var(--text-h4)" }}>
           Required Setup
         </h3>
-        <div className="rounded-xl bg-muted/60 border border-border p-5 font-mono space-y-1">
+        <div className="rounded-xl bg-muted/60 border border-border p-5 space-y-1">
           <div className="text-muted-foreground">{"// main.ts — import once at root"}</div>
           <div className="text-primary">{"import '@uxuissk/design-system-core';"}</div>
           <div className="mt-3 text-muted-foreground">{"<!-- Wrap root with provider — injects all tokens -->"}</div>
@@ -114,7 +114,7 @@ export function DS3GettingStartedPage() {
         <div className="mt-4 border border-amber-200 bg-amber-50 dark:bg-amber-950/30 dark:border-amber-800 rounded-xl p-4" style={fontBody}>
           <span className="font-semibold text-amber-700 dark:text-amber-400">⚠️ Required: </span>
           <span className="text-amber-700 dark:text-amber-300">
-            ทุก project ต้องครอบด้วย <code className="font-mono">{"<ssk-app-shell-provider>"}</code> — หากไม่มี component จะไม่มีสีและ token
+            ทุก project ต้องครอบด้วย <code className="">{"<ssk-app-shell-provider>"}</code> — หากไม่มี component จะไม่มีสีและ token
           </span>
         </div>
       </div>
@@ -127,7 +127,7 @@ export function DS3GettingStartedPage() {
         <div className="grid grid-cols-3 gap-3">
           {["patona", "ccs3", "oc2plus"].map((brand) => (
             <div key={brand} className="border border-border rounded-lg p-4 text-center">
-              <code className="text-primary font-mono">"{brand}"</code>
+              <code className="text-primary">"{brand}"</code>
             </div>
           ))}
         </div>
@@ -139,7 +139,7 @@ export function DS3GettingStartedPage() {
           AI Integration — Vibecode ด้วย MCP
         </h3>
         <p className="text-muted-foreground mb-4" style={fontBody}>
-          ติดตั้ง <code className="text-primary font-mono">@uxuissk/ds3-mcp</code> เพื่อให้ AI (Claude, Cursor, Codex, ChatGPT) เข้าใจ DS 3.0 และสร้าง code ที่ใช้ ssk-* ถูกต้อง 100%
+          ติดตั้ง <code className="text-primary">@uxuissk/ds3-mcp</code> เพื่อให้ AI (Claude, Cursor, Codex, ChatGPT) เข้าใจ DS 3.0 และสร้าง code ที่ใช้ ssk-* ถูกต้อง 100%
         </p>
 
         {/* Endpoints summary */}
@@ -179,7 +179,7 @@ export function DS3GettingStartedPage() {
               <span className="font-semibold" style={{ fontFamily: "var(--font-label)" }}>Claude Code / Cursor</span>
               <ssk-badge color="info">stdio</ssk-badge>
             </div>
-            <p className="text-muted-foreground mb-3" style={fontBody}>เพิ่มใน <code className="font-mono">.mcp.json</code></p>
+            <p className="text-muted-foreground mb-3" style={fontBody}>เพิ่มใน <code className="">.mcp.json</code></p>
             <pre className="bg-muted rounded-lg p-3 overflow-x-auto">
 {`{
   "mcpServers": {
@@ -211,7 +211,7 @@ Name: Sellsuki DS 3.0`}
               <span className="font-semibold" style={{ fontFamily: "var(--font-label)" }}>Codex (OpenAI)</span>
               <ssk-badge color="success">HTTP</ssk-badge>
             </div>
-            <p className="text-muted-foreground mb-3" style={fontBody}>เพิ่มใน <code className="font-mono">~/.codex/config.toml</code></p>
+            <p className="text-muted-foreground mb-3" style={fontBody}>เพิ่มใน <code className="">~/.codex/config.toml</code></p>
             <pre className="bg-muted rounded-lg p-3 overflow-x-auto">
 {`[mcp_servers.ds3]
 url = "https://ds3-mcp.vercel.app/api/mcp"`}
