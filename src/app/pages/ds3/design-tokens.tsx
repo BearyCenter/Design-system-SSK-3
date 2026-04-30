@@ -83,8 +83,12 @@ const elevationTokens = [
   { token: "--elevation-xl", label: "xl",  usage: "Modal / overlay" },
 ];
 
-const brands = ["patona", "ccs3", "oc2plus"] as const;
-type Brand = typeof brands[number];
+const brands: { value: Brand; label: string }[] = [
+  { value: "ccs3",    label: "Sellsuki / CCS3" },
+  { value: "patona",  label: "Patona" },
+  { value: "oc2plus", label: "OC2Plus" },
+];
+type Brand = "ccs3" | "patona" | "oc2plus";
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
@@ -271,16 +275,16 @@ export function DS3DesignTokensPage() {
         <div className="flex gap-2">
           {brands.map((b) => (
             <button
-              key={b}
-              onClick={() => setActiveBrand(b)}
+              key={b.value}
+              onClick={() => setActiveBrand(b.value)}
               className={`px-4 py-1.5 rounded-lg border transition-colors ${
-                activeBrand === b
+                activeBrand === b.value
                   ? "border-primary bg-primary/10 text-primary"
                   : "border-border text-muted-foreground hover:border-primary/50"
               }`}
               style={fontBody}
             >
-              {b}
+              {b.label}
             </button>
           ))}
         </div>
