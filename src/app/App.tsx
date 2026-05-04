@@ -142,6 +142,7 @@ import { DS3ButtonShowcase } from "./pages/ds3/button-showcase";
 import { DS3InputShowcase } from "./pages/ds3/input-showcase";
 import { DS3BadgeShowcase } from "./pages/ds3/badge-showcase";
 import { DS3ChartsShowcase } from "./pages/ds3/charts-showcase";
+import { DS3VibecodesPage } from "./pages/ds3/vibecode-templates";
 
 // ─── Sidebar Navigation Types ─────────────────────────────────────────────────
 
@@ -218,7 +219,8 @@ type PageId =
   | "ds3-button"
   | "ds3-input"
   | "ds3-badge"
-  | "ds3-charts";
+  | "ds3-charts"
+  | "ds3-vibecodes";
 
 interface SidebarItem {
   id: PageId;
@@ -355,6 +357,7 @@ function buildSidebarGroups21(_t: (key: string) => string): SidebarGroup[] {
         { id: "ds21-roadmap", label: "Upgrade Roadmap", icon: <Layers size={16} /> },
         { id: "ds3-getting-started", label: "Getting Started", icon: <BookOpen size={16} /> },
         { id: "ds3-design-tokens", label: "Design Tokens", icon: <Palette size={16} />, badge: "3.0" },
+        { id: "ds3-vibecodes", label: "Vibecode Templates", icon: <Zap size={16} />, badge: "3.0" },
         { id: "changelog", label: "Changelog", icon: <History size={16} />, badge: `v${latestChangelog.version}` },
       ],
     },
@@ -508,6 +511,7 @@ const PAGE_MAP: Record<PageId, React.ComponentType> = {
   // DS 3.0 pages
   "ds3-getting-started": DS3GettingStartedPage,
   "ds3-design-tokens": DS3DesignTokensPage,
+  "ds3-vibecodes": DS3VibecodesPage,
   "ds3-button": DS3ButtonShowcase,
   "ds3-input": DS3InputShowcase,
   "ds3-badge": DS3BadgeShowcase,
