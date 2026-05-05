@@ -55,6 +55,7 @@ import {
   Activity,
   Clock,
   Layers,
+  Zap,
   ArrowLeft,
 } from "lucide-react";
 import SSKIcon from "../imports/Icon";
