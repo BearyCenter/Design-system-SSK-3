@@ -54,6 +54,14 @@ declare module "react" {
       "ssk-donut-chart": DS3El;
       "ssk-top-navbar": DS3El;
       "ssk-input-range": DS3El;
+      "ssk-page-header": DS3El;
+      "ssk-filter-bar": DS3El;
+      "ssk-pagination": DS3El;
+      "ssk-date-picker": DS3El;
+      "ssk-app-shell": DS3El;
+      "ssk-sidebar-group": DS3El;
+      "ssk-sidebar-items": DS3El;
+      "ssk-widget-matric": DS3El;
     }
   }
 }
