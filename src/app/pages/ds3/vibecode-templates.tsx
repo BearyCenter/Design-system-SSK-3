@@ -313,7 +313,7 @@ export function DS3VibecodesPage() {
             ✅ ผลลัพธ์ที่ได้จริง
           </h3>
           <div className="rounded-xl border border-border overflow-hidden">
-            <div className="p-6 bg-background min-h-64">
+            <div key={current.id} className="p-6 bg-background min-h-64">
               {current.preview()}
             </div>
             <details className="border-t border-border">
