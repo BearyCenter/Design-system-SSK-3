@@ -15,10 +15,10 @@ interface Template {
 }
 
 const featurePagePreview = () => (
-  <ssk-theme-provider brand="ccs3">
+  <ssk-app-shell-provider brand="ccs3">
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <ssk-page-header title="Order Management">
-        <ssk-button slot="action" variant="solid" themeColor="primary">
+        <ssk-button slot="action" variant="solid" tone="brand">
           + New Order
         </ssk-button>
       </ssk-page-header>
@@ -37,14 +37,14 @@ const featurePagePreview = () => (
         </ssk-card>
       </div>
     </div>
-  </ssk-theme-provider>
+  </ssk-app-shell-provider>
 );
 
 const productListPreview = () => (
-  <ssk-theme-provider brand="ccs3">
+  <ssk-app-shell-provider brand="ccs3">
     <div style={{ display: "flex", flexDirection: "column" }}>
       <ssk-page-header title="Product List">
-        <ssk-button slot="action" variant="solid" themeColor="primary">
+        <ssk-button slot="action" variant="solid" tone="brand">
           + New Product
         </ssk-button>
       </ssk-page-header>
@@ -73,7 +73,7 @@ const productListPreview = () => (
             <td><ssk-badge color="success">Active</ssk-badge></td>
             <td style={{ display: "flex", gap: 8 }}>
               <ssk-button variant="ghost" size="sm">Edit</ssk-button>
-              <ssk-button variant="ghost" themeColor="danger" size="sm">Delete</ssk-button>
+              <ssk-button variant="ghost" tone="danger" size="sm">Delete</ssk-button>
             </td>
           </tr>
           <tr>
@@ -84,18 +84,18 @@ const productListPreview = () => (
             <td><ssk-badge color="warning">Draft</ssk-badge></td>
             <td style={{ display: "flex", gap: 8 }}>
               <ssk-button variant="ghost" size="sm">Edit</ssk-button>
-              <ssk-button variant="ghost" themeColor="danger" size="sm">Delete</ssk-button>
+              <ssk-button variant="ghost" tone="danger" size="sm">Delete</ssk-button>
             </td>
           </tr>
         </tbody>
       </ssk-table>
       <ssk-pagination total="24" pageSize="10"></ssk-pagination>
     </div>
-  </ssk-theme-provider>
+  </ssk-app-shell-provider>
 );
 
 const productFormPreview = () => (
-  <ssk-theme-provider brand="ccs3">
+  <ssk-app-shell-provider brand="ccs3">
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <ssk-page-header title="Create Order">
         <ssk-button slot="action" variant="outline">Cancel</ssk-button>
@@ -114,7 +114,7 @@ const productFormPreview = () => (
             <ssk-textarea label="หมายเหตุ" placeholder="หมายเหตุเพิ่มเติม..."></ssk-textarea>
             <div style={{ display: "flex", justifyContent: "flex-end", gap: 12, marginTop: 8 }}>
               <ssk-button variant="outline" type="button">Cancel</ssk-button>
-              <ssk-button variant="solid" themeColor="primary" type="submit">
+              <ssk-button variant="solid" tone="brand" type="submit">
                 Save Order
               </ssk-button>
             </div>
@@ -122,7 +122,7 @@ const productFormPreview = () => (
         </ssk-card>
       </div>
     </div>
-  </ssk-theme-provider>
+  </ssk-app-shell-provider>
 );
 
 const templates: Template[] = [
@@ -138,7 +138,7 @@ brand = ccs3, primary action = "+ New Order"
     htmlSource: `<ssk-app-shell-provider brand="ccs3">
   <ssk-app-shell>
     <ssk-page-header title="Order Management">
-      <ssk-button slot="action" variant="solid" themeColor="primary">+ New Order</ssk-button>
+      <ssk-button slot="action" variant="solid" tone="brand">+ New Order</ssk-button>
     </ssk-page-header>
     <div style="padding: 24px;">
       <ssk-alert themeColor="info">Feature พร้อมพัฒนา</ssk-alert>
@@ -167,7 +167,7 @@ columns = ID, ชื่อสินค้า, หมวดหมู่, รา�
     htmlSource: `<ssk-app-shell-provider brand="ccs3">
   <ssk-app-shell>
     <ssk-page-header title="Product List">
-      <ssk-button slot="action" variant="solid" themeColor="primary">+ New Product</ssk-button>
+      <ssk-button slot="action" variant="solid" tone="brand">+ New Product</ssk-button>
     </ssk-page-header>
     <ssk-filter-bar>
       <ssk-input slot="search" placeholder="Search Product..."></ssk-input>
@@ -214,7 +214,7 @@ fields = ชื่อลูกค้า, สินค้า, จำนวน, �
           <ssk-date-picker label="วันที่จัดส่ง"></ssk-date-picker>
           <ssk-textarea label="หมายเหตุ"></ssk-textarea>
           <ssk-button variant="outline">Cancel</ssk-button>
-          <ssk-button variant="solid" themeColor="primary" type="submit">Save Order</ssk-button>
+          <ssk-button variant="solid" tone="brand" type="submit">Save Order</ssk-button>
         </form>
       </ssk-card>
     </div>
