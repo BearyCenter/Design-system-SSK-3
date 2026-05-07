@@ -19,64 +19,114 @@ interface Template {
   preview: () => React.ReactNode;
 }
 
+// ── Layout helpers ────────────────────────────────────────────────────────────
+//
+// JSX preview renders MAIN CONTENT AREA only (no app-shell/sidebar wrappers).
+// Reason: <ssk-app-shell> + <ssk-sidebar> use Shadow-DOM slot distribution that
+// requires explicit container height; in a React preview without parent height
+// they collapse to empty rows. The full app-shell + sidebar markup is preserved
+// in `htmlSource` so AI consumers still receive contract-conformant output.
+//
+// Visual: thin "sidebar marker" bar on the left + page header + content area
+// to hint at the real production layout without breaking the live render.
+
+function PreviewShell({ sidebarLabel, children }: { sidebarLabel: string; children: React.ReactNode }) {
+  return (
+    <ssk-app-shell-provider brand="ccs3">
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "180px 1fr",
+          minHeight: 400,
+          background: "var(--bg-quaternary, #f9fafb)",
+          border: "1px solid var(--stroke-primary, #e5e7eb)",
+          borderRadius: "var(--radius-md, 8px)",
+          overflow: "hidden",
+        }}
+      >
+        {/* Sidebar marker (simplified — full ssk-sidebar in htmlSource) */}
+        <aside
+          style={{
+            background: "var(--bg-primary, #fff)",
+            borderRight: "1px solid var(--stroke-primary, #e5e7eb)",
+            padding: "20px 16px",
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+            <div style={{ width: 28, height: 28, borderRadius: 6, background: "var(--bg-brand-solid, #32A9FF)" }} />
+            <span style={{ fontFamily: "var(--font-label)", fontSize: "var(--font-size-caption)", fontWeight: 600, color: "var(--text-primary)" }}>
+              Sellsuki
+            </span>
+          </div>
+          <div
+            style={{
+              padding: "10px 12px",
+              borderRadius: "var(--radius-sm, 6px)",
+              background: "var(--bg-brand-primary, #f0f9ff)",
+              color: "var(--fg-brand-primary, #32A9FF)",
+              fontFamily: "var(--font-label)",
+              fontSize: "var(--font-size-caption)",
+              fontWeight: 500,
+            }}
+          >
+            {sidebarLabel}
+          </div>
+        </aside>
+
+        {/* Main content */}
+        <main style={{ display: "flex", flexDirection: "column", overflow: "auto" }}>
+          {children}
+        </main>
+      </div>
+    </ssk-app-shell-provider>
+  );
+}
+
 // ── 1. Feature Page ───────────────────────────────────────────────────────────
 
 const featurePagePreview = () => (
-  <ssk-app-shell-provider brand="ccs3">
-    <ssk-app-shell>
-      <ssk-sidebar slot="sidebar">
-        <ssk-logo slot="logo"></ssk-logo>
-        <ssk-sidebar-group>
-          <ssk-sidebar-items label="Order Management" active></ssk-sidebar-items>
-        </ssk-sidebar-group>
-      </ssk-sidebar>
-      <main>
-        <ssk-page-header title="Order Management">
-          <ssk-button slot="action" variant="solid" tone="brand">
-            + New Order
-          </ssk-button>
-        </ssk-page-header>
-        <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 16 }}>
-          <ssk-alert themeColor="info">
-            Feature พร้อมพัฒนา — เพิ่ม component ตาม use case ได้เลย
-          </ssk-alert>
-          <ssk-card>
-            <ssk-heading slot="header">Order Overview</ssk-heading>
-            <div style={{ display: "flex", gap: 16, padding: 16, flexWrap: "wrap" }}>
-              <ssk-badge color="primary">Total: 0</ssk-badge>
-              <ssk-badge color="success">Completed: 0</ssk-badge>
-              <ssk-badge color="warning">Pending: 0</ssk-badge>
-              <ssk-badge color="danger">Cancelled: 0</ssk-badge>
-            </div>
-          </ssk-card>
+  <PreviewShell sidebarLabel="Order Management">
+    <ssk-page-header title="Order Management">
+      <ssk-button slot="action" variant="solid" tone="brand">
+        + New Order
+      </ssk-button>
+    </ssk-page-header>
+    <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 16 }}>
+      <ssk-alert themeColor="info">
+        Feature พร้อมพัฒนา — เพิ่ม component ตาม use case ได้เลย
+      </ssk-alert>
+      <ssk-card>
+        <ssk-heading slot="header">Order Overview</ssk-heading>
+        <div style={{ display: "flex", gap: 16, padding: 16, flexWrap: "wrap" }}>
+          <ssk-badge color="primary">Total: 0</ssk-badge>
+          <ssk-badge color="success">Completed: 0</ssk-badge>
+          <ssk-badge color="warning">Pending: 0</ssk-badge>
+          <ssk-badge color="danger">Cancelled: 0</ssk-badge>
         </div>
-      </main>
-    </ssk-app-shell>
-  </ssk-app-shell-provider>
+      </ssk-card>
+    </div>
+  </PreviewShell>
 );
 
 // ── 2. Product List ───────────────────────────────────────────────────────────
 
 const productListPreview = () => (
-  <ssk-app-shell-provider brand="ccs3">
-    <ssk-app-shell>
-      <ssk-sidebar slot="sidebar">
-        <ssk-logo slot="logo"></ssk-logo>
-        <ssk-sidebar-group>
-          <ssk-sidebar-items label="Product List" active></ssk-sidebar-items>
-        </ssk-sidebar-group>
-      </ssk-sidebar>
-      <main>
-        <ssk-page-header title="Product List">
-          <ssk-button slot="action" variant="solid" tone="brand">
-            + New Product
-          </ssk-button>
-        </ssk-page-header>
-        <ssk-filter-bar>
-          <ssk-input slot="search" placeholder="Search Product..."></ssk-input>
-          <ssk-dropdown slot="filter" label="Category"></ssk-dropdown>
-          <ssk-dropdown slot="filter" label="Status"></ssk-dropdown>
-        </ssk-filter-bar>
+  <PreviewShell sidebarLabel="Product List">
+    <ssk-page-header title="Product List">
+      <ssk-button slot="action" variant="solid" tone="brand">
+        + New Product
+      </ssk-button>
+    </ssk-page-header>
+    <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 16 }}>
+      <ssk-filter-bar>
+        <ssk-input slot="search" placeholder="Search Product..."></ssk-input>
+        <ssk-dropdown slot="filter" label="Category"></ssk-dropdown>
+        <ssk-dropdown slot="filter" label="Status"></ssk-dropdown>
+      </ssk-filter-bar>
+      <ssk-card>
         <ssk-table sortable selectable>
           <thead>
             <tr>
@@ -113,87 +163,66 @@ const productListPreview = () => (
             </tr>
           </tbody>
         </ssk-table>
-        <ssk-pagination total="24" pageSize="10"></ssk-pagination>
-      </main>
-    </ssk-app-shell>
-  </ssk-app-shell-provider>
+      </ssk-card>
+      <ssk-pagination total="24" pageSize="10"></ssk-pagination>
+    </div>
+  </PreviewShell>
 );
 
 // ── 3. Product Form ───────────────────────────────────────────────────────────
 
 const productFormPreview = () => (
-  <ssk-app-shell-provider brand="ccs3">
-    <ssk-app-shell>
-      <ssk-sidebar slot="sidebar">
-        <ssk-logo slot="logo"></ssk-logo>
-        <ssk-sidebar-group>
-          <ssk-sidebar-items label="Order" active></ssk-sidebar-items>
-        </ssk-sidebar-group>
-      </ssk-sidebar>
-      <main>
-        <ssk-page-header title="Create Order">
-          <ssk-button slot="action" variant="outline">Cancel</ssk-button>
-        </ssk-page-header>
-        <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 16 }}>
-          <ssk-alert themeColor="danger">
-            ตัวอย่าง — กรุณากรอกข้อมูลให้ครบถ้วน
-          </ssk-alert>
-          <ssk-card>
-            <ssk-heading slot="header">ข้อมูล Order</ssk-heading>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16, padding: 24 }}>
-              <ssk-input label="ชื่อลูกค้า" placeholder="ชื่อลูกค้า" required></ssk-input>
-              <ssk-dropdown label="สินค้า" required></ssk-dropdown>
-              <ssk-input label="จำนวน" type="number" placeholder="0" required></ssk-input>
-              <ssk-date-picker label="วันที่จัดส่ง"></ssk-date-picker>
-              <ssk-textarea label="หมายเหตุ" placeholder="หมายเหตุเพิ่มเติม..."></ssk-textarea>
-              <div style={{ display: "flex", justifyContent: "flex-end", gap: 12, marginTop: 8 }}>
-                <ssk-button variant="outline" type="button">Cancel</ssk-button>
-                <ssk-button variant="solid" tone="brand" type="submit">
-                  Save Order
-                </ssk-button>
-              </div>
-            </div>
-          </ssk-card>
+  <PreviewShell sidebarLabel="Order">
+    <ssk-page-header title="Create Order">
+      <ssk-button slot="action" variant="outline">Cancel</ssk-button>
+    </ssk-page-header>
+    <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 16 }}>
+      <ssk-alert themeColor="danger">
+        ตัวอย่าง — กรุณากรอกข้อมูลให้ครบถ้วน
+      </ssk-alert>
+      <ssk-card>
+        <ssk-heading slot="header">ข้อมูล Order</ssk-heading>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, padding: 24 }}>
+          <ssk-input label="ชื่อลูกค้า" placeholder="ชื่อลูกค้า" required></ssk-input>
+          <ssk-dropdown label="สินค้า" required></ssk-dropdown>
+          <ssk-input label="จำนวน" type="number" placeholder="0" required></ssk-input>
+          <ssk-date-picker label="วันที่จัดส่ง"></ssk-date-picker>
+          <ssk-textarea label="หมายเหตุ" placeholder="หมายเหตุเพิ่มเติม..."></ssk-textarea>
+          <div style={{ display: "flex", justifyContent: "flex-end", gap: 12, marginTop: 8 }}>
+            <ssk-button variant="outline" type="button">Cancel</ssk-button>
+            <ssk-button variant="solid" tone="brand" type="submit">
+              Save Order
+            </ssk-button>
+          </div>
         </div>
-      </main>
-    </ssk-app-shell>
-  </ssk-app-shell-provider>
+      </ssk-card>
+    </div>
+  </PreviewShell>
 );
 
 // ── 4. Analytics Widget ───────────────────────────────────────────────────────
 
 const analyticsWidgetPreview = () => (
-  <ssk-app-shell-provider brand="ccs3">
-    <ssk-app-shell>
-      <ssk-sidebar slot="sidebar">
-        <ssk-logo slot="logo"></ssk-logo>
-        <ssk-sidebar-group>
-          <ssk-sidebar-items label="Analytics" active></ssk-sidebar-items>
-          <ssk-sidebar-items label="Reports"></ssk-sidebar-items>
-        </ssk-sidebar-group>
-      </ssk-sidebar>
-      <main>
-        <ssk-page-header title="Analytics">
-          <ssk-button slot="action" variant="outline">Export</ssk-button>
-        </ssk-page-header>
-        <ssk-filter-bar>
-          <ssk-date-picker slot="filter" label="Period" range></ssk-date-picker>
-          <ssk-dropdown slot="filter" label="Compare"></ssk-dropdown>
-        </ssk-filter-bar>
-        <div style={{ padding: 24 }}>
-          <ssk-widget-grid>
-            <ssk-widget-matric label="Sales" subText="vs last period"></ssk-widget-matric>
-            <ssk-widget-matric label="Orders" subText="vs last period"></ssk-widget-matric>
-            <ssk-widget-matric label="Customers" subText="vs last period"></ssk-widget-matric>
-          </ssk-widget-grid>
-          <ssk-card style={{ marginTop: 24 }}>
-            <ssk-heading slot="header">Sales Trend</ssk-heading>
-            <ssk-line-chart></ssk-line-chart>
-          </ssk-card>
-        </div>
-      </main>
-    </ssk-app-shell>
-  </ssk-app-shell-provider>
+  <PreviewShell sidebarLabel="Analytics">
+    <ssk-page-header title="Analytics">
+      <ssk-button slot="action" variant="outline">Export</ssk-button>
+    </ssk-page-header>
+    <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 16 }}>
+      <ssk-filter-bar>
+        <ssk-date-picker slot="filter" label="Period" range></ssk-date-picker>
+        <ssk-dropdown slot="filter" label="Compare"></ssk-dropdown>
+      </ssk-filter-bar>
+      <ssk-widget-grid>
+        <ssk-widget-matric label="Sales" subText="vs last period"></ssk-widget-matric>
+        <ssk-widget-matric label="Orders" subText="vs last period"></ssk-widget-matric>
+        <ssk-widget-matric label="Customers" subText="vs last period"></ssk-widget-matric>
+      </ssk-widget-grid>
+      <ssk-card>
+        <ssk-heading slot="header">Sales Trend</ssk-heading>
+        <ssk-line-chart></ssk-line-chart>
+      </ssk-card>
+    </div>
+  </PreviewShell>
 );
 
 // ── Templates registry — mirrors ds3-mcp 1.2.1 Phase 5 ───────────────────────
@@ -493,9 +522,14 @@ export function DS3VibecodesPage() {
 
         {/* Live preview */}
         <div>
-          <h3 className="text-foreground font-semibold mb-3" style={fontLabel}>
-            ✅ ผลลัพธ์ที่ได้จริง (live render — ตรง ds3-mcp 1.2.1 output)
-          </h3>
+          <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
+            <h3 className="text-foreground font-semibold" style={fontLabel}>
+              ✅ ผลลัพธ์ที่ได้จริง — Main content render
+            </h3>
+            <span className="text-muted-foreground" style={{ fontFamily: "var(--font-p)", fontSize: "var(--font-size-caption)" }}>
+              (โครง app-shell + sidebar เต็ม → ดู HTML source ด้านล่าง)
+            </span>
+          </div>
           <div className="rounded-xl border border-border overflow-hidden">
             <div key={current.id} className="p-6 bg-background min-h-64">
               {current.preview()}
