@@ -37,6 +37,67 @@ interface ChangelogVersion {
 
 export const changelogVersions: ChangelogVersion[] = [
   {
+    version: "3.3.0",
+    date: "May 7, 2026",
+    summary: "Button DS 3.0 — semantic intent API ผ่าน variant+tone (รองรับ 3 brands), Vibecode Contract สำหรับ AI gen, ds3-mcp templates pass 100%",
+    tags: ["improved", "breaking"],
+    features: [
+      {
+        icon: <Layers size={16} />,
+        title: "Button — `variant` + `tone` API (DS 3.0)",
+        description: "API ใหม่: <ssk-button variant=\"solid\" tone=\"brand|danger|success|warning|info\">. Option C composable ผ่าน :host([variant][tone]) — brand switching ทำงานได้ runtime ไม่ต้องแก้โค้ด. Legacy themeColor ยังใช้ได้ (auto-bridge themeColor=\"error\" → tone=\"danger\") พร้อม console.warn",
+      },
+      {
+        icon: <SwatchBook size={16} />,
+        title: "31 Button-specific Tokens × 2 brand maps",
+        description: "เพิ่ม --button-{variant}-{tone}-{state} ครบ Solid/Outline/Ghost/Solid-Light × Brand/Danger ทั้ง Patona และ Sellsuki + 5 generic --bg-{tone}-solid-hover สำหรับ success/warning/info ที่รอ Figma spec (DES-2013)",
+      },
+      {
+        icon: <Package size={16} />,
+        title: "Soft-deprecate 9 escape-hatch props",
+        description: "themeColor, color, backgroundColor, borderColor, fontSize, lineHeight, borderWidth, boxShadow, dropShadow → @deprecated JSDoc + runtime console.warn. จะลบจริงใน DS 3.4.0",
+      },
+      {
+        icon: <GitPullRequest size={16} />,
+        title: "CI Ratchet — cssVar('colors',...) detection",
+        description: "Token spec gate ใหม่จับ palette primitive ที่ bypass semantic tokens. Baseline 44 components — ทุก PR ที่ migrate ลด baseline ลง 1 (ratchet ป้องกัน regression). Mass migration plan: DES-2014",
+      },
+      {
+        icon: <BookOpen size={16} />,
+        title: "Vibecode Contract — Public API",
+        description: "Export runContract() helper ที่ @uxuissk/design-system-core/test-utils/vibecode-contract — 7 hard-fail rules (root provider, brand whitelist, no hex, font ≥18px, ssk-* tags, no Tailwind, button uses tone). ds3-mcp consume ได้ใน CI",
+      },
+      {
+        icon: <Globe size={16} />,
+        title: "ds3-mcp 1.2.1 — Templates 100% pass",
+        description: "11 prompt templates × 3 brands = 33 runs, pass rate 9.1% → 100%. แก้ FONT_RULES ที่สอน LLM ใช้ themeColor (legacy), migrate ทุก template เป็น ssk-app-shell-provider, brand_rules + components.json metadata sync DS 3.0 (DES-2016)",
+      },
+    ],
+  },
+  {
+    version: "3.2.0",
+    date: "April 25, 2026",
+    summary: "Token enforcement สมบูรณ์ — font ≥18px, color tokens scan, Storybook Design Token Gallery, button box-sizing fix",
+    tags: ["improved"],
+    features: [
+      {
+        icon: <Paintbrush size={16} />,
+        title: "Token Spec CI Gate",
+        description: "ขยาย token-spec.test.ts ให้ scan ทุก component + .storybook/stories/ — hard-fail font-size <18px, ห้าม Tailwind text-xs/text-sm, ห้าม hex literal นอก var(). Soft-baseline สำหรับ stories",
+      },
+      {
+        icon: <SwatchBook size={16} />,
+        title: "Storybook Design Token Gallery",
+        description: "4 stories ใน .storybook/stories/DesignTokens/: Typography (font-size table + samples), Colors (swatch grid 3 brands), Radius (token visual), Elevation (card shadows sm/md/lg/xl) — sync ตรงกับ semantic-tokens.ts",
+      },
+      {
+        icon: <Layers size={16} />,
+        title: "Button — box-sizing fix",
+        description: "เพิ่ม box-sizing: border-box ทำให้ทุก variant (solid/outline/ghost/solid-light) ขนาดเท่ากัน — outline เคยใหญ่กว่าเพราะ border 1px นอกกล่อง",
+      },
+    ],
+  },
+  {
     version: "3.1.1",
     date: "April 24, 2026",
     summary: "ปรับ font-size token ให้ตรงกับ DS 3.0 spec — xs 16px, sm 18px, md 20px, lg 24px, xl 28px",
