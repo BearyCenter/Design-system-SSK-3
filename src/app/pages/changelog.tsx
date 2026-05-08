@@ -37,6 +37,44 @@ interface ChangelogVersion {
 
 export const changelogVersions: ChangelogVersion[] = [
   {
+    version: "3.4.0",
+    date: "May 8, 2026",
+    summary: "Pattern source-of-truth — <ssk-pattern-order-management> เป็น Lit element ตัวแรกที่รุกออกไป Storybook + Vibecode Templates + MCP จากไฟล์เดียว, font-size migration ลบ DS 1.0 carryover (sidebar 24→20px และอีก 10 component)",
+    tags: ["new", "improved"],
+    features: [
+      {
+        icon: <Layers size={16} />,
+        title: "Pattern source-of-truth — <ssk-pattern-order-management>",
+        description: "เปิดตัว src/patterns/ — Lit element ที่ห่อหน้า Order Management ครบ (sidebar + navbar + 4 KPI stat cards + status tabs + table 10 rows + pagination) พร้อม brand prop + .data override + static toHtmlString() สำหรับ MCP/contract test. ใช้ตัวเดียวใน Storybook (Patterns/Order Management) + ds3-preview Vibecode Templates Feature Page + ds3-mcp htmlSource — ลบ drift ระหว่าง 3 channels",
+      },
+      {
+        icon: <LayoutGrid size={16} />,
+        title: "Vibecode Templates Feature Page — real component render",
+        description: "เปลี่ยน Feature Page tab จาก hand-coded React JSX (~250 บรรทัด) เป็น <ssk-pattern-order-management brand=\"ccs3\"> ตัวเดียว — preview ตรง npm package 100%, AI vibe code ที่อ่าน htmlSource ได้ output โครงสร้างเดียวกับที่ผู้ใช้เห็น. Container 600px ห่อ shell แทน fake PreviewShell (CSS grid mimic)",
+      },
+      {
+        icon: <Paintbrush size={16} />,
+        title: "Font-size migration — 11 components h4→p (DS 1.0 carryover)",
+        description: "DS 1.0 ใช้ --font-size-h4 (24px) เป็น \"important text\" ทั่วไป, DS 3.0 spec แยก h-tokens สำหรับ heading จริงเท่านั้น. Migrate sidebar item, modal body, stepper labels, timeline title, toast content, tab labels, widget table cells → p (20) หรือ button (18). Distribution: h4 ใช้ 15→3 จุด (เหลือเฉพาะ heading จริง), p ใช้ 9→19 จุด",
+      },
+      {
+        icon: <GitPullRequest size={16} />,
+        title: "CI Ratchet — non-heading components don't use h-tokens",
+        description: "token-spec.test.ts rule ใหม่ \"non-heading components do not use --font-size-h[1-4] for body text\" baseline 4 (modal title h3, page-header title h4, stepper step-circle h4, toast title h4 — heading จริงทั้งหมด). เพิ่ม misuse ใหม่ → CI red. Ratchet ลด baseline ทุกครั้งที่ migrate component เพิ่ม",
+      },
+      {
+        icon: <BookOpen size={16} />,
+        title: "CLAUDE.md — Component context → Token table",
+        description: "เพิ่มตาราง explicit \"sidebar item / list item / table cell → --font-size-p\", \"button / tab / chip → --font-size-button\", \"caption / hint → --font-size-caption\", \"card title / modal subsection → --font-size-h4\", etc. — developer และ AI consumer ไม่ต้องเดา token ที่ใช้ในแต่ละ context",
+      },
+      {
+        icon: <Package size={16} />,
+        title: "Sidebar item — รองรับ default slot label + slot=\"prefix\" icon",
+        description: "ssk-sidebar-item จริง ๆ รับ label ผ่าน default slot (ไม่ใช่ label prop ที่ไม่ render), icon ผ่าน slot=\"prefix\" (ไม่มี slot=\"icon\"). ssk-sidebar-group label render เป็น header. แก้ confusion ที่เจอตอน wire pattern เข้า ds3-preview",
+      },
+    ],
+  },
+  {
     version: "3.3.0",
     date: "May 7, 2026",
     summary: "Button DS 3.0 — semantic intent API ผ่าน variant+tone (รองรับ 3 brands), Vibecode Contract สำหรับ AI gen, ds3-mcp templates pass 100%",

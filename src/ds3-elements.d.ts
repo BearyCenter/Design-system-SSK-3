@@ -62,6 +62,9 @@ declare module "react" {
       "ssk-sidebar-group": DS3El;
       "ssk-sidebar-items": DS3El;
       "ssk-widget-matric": DS3El;
+
+      // Page patterns (ssk-pattern-*) from @uxuissk/design-system-core/patterns
+      "ssk-pattern-order-management": DS3El;
     }
   }
 }

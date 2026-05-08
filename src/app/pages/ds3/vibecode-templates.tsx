@@ -86,29 +86,32 @@ function PreviewShell({ sidebarLabel, children }: { sidebarLabel: string; childr
 }
 
 // ── 1. Feature Page ───────────────────────────────────────────────────────────
+// Order Management dashboard — renders the canonical <ssk-pattern-order-management>
+// Lit element from @uxuissk/design-system-core. Single source of truth: the same
+// element is used by the Storybook story in sellsuki-components-main, by this
+// preview, and by ds3-mcp's getPrompt() htmlSource. No drift between channels.
+//
+// The element internally wraps in <ssk-app-shell-provider> + <ssk-app-shell> with
+// height:100% so it fills the bounded container we give it (600px works fine,
+// verified via Storybook's Bounded600 story).
 
 const featurePagePreview = () => (
-  <PreviewShell sidebarLabel="Order Management">
-    <ssk-page-header title="Order Management">
-      <ssk-button slot="action" variant="solid" tone="brand">
-        + New Order
-      </ssk-button>
-    </ssk-page-header>
-    <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 16 }}>
-      <ssk-alert themeColor="info">
-        Feature พร้อมพัฒนา — เพิ่ม component ตาม use case ได้เลย
-      </ssk-alert>
-      <ssk-card>
-        <ssk-heading slot="header">Order Overview</ssk-heading>
-        <div style={{ display: "flex", gap: 16, padding: 16, flexWrap: "wrap" }}>
-          <ssk-badge color="primary">Total: 0</ssk-badge>
-          <ssk-badge color="success">Completed: 0</ssk-badge>
-          <ssk-badge color="warning">Pending: 0</ssk-badge>
-          <ssk-badge color="danger">Cancelled: 0</ssk-badge>
-        </div>
-      </ssk-card>
-    </div>
-  </PreviewShell>
+  <div
+    style={{
+      height: 600,
+      width: "100%",
+      border: "1px solid var(--stroke-secondary, #e5e7eb)",
+      borderRadius: "var(--radius-lg, 12px)",
+      overflow: "hidden",
+    }}
+  >
+    {/* ssk-theme-provider injects --ssk-colors-* tokens needed by ssk-button/ */}
+    {/* badge/tag internal styles. ssk-app-shell-provider sets brand semantic */}
+    {/* tokens (--bg-primary, --text-secondary, etc.) — both providers needed.  */}
+    <ssk-theme-provider brand="ccs3" style={{ display: "block", height: "100%" }}>
+      <ssk-pattern-order-management brand="ccs3"></ssk-pattern-order-management>
+    </ssk-theme-provider>
+  </div>
 );
 
 // ── 2. Product List ───────────────────────────────────────────────────────────
@@ -232,34 +235,118 @@ const templates: Template[] = [
     id: "feature-page",
     name: "Feature Page",
     tag: "create_feature_page",
-    description: "Starting point สำหรับ feature ใหม่ — AppShell + Sidebar + PageHeader + Action slot",
-    prompt: `ขอช่วยสร้าง feature page ใหม่ชื่อ "Order Management" สำหรับ Sellsuki
-ใช้ Design System DS 3.0 (มี MCP ds3 ติดตั้งแล้ว — เรียก get_brand_rules + get_component ก่อน gen)
-brand = ccs3, primary action = "+ New Order"
-ขอ HTML ที่:
-- ใช้ <ssk-app-shell-provider brand="ccs3"> เป็น root (ห้าม ssk-theme-provider)
-- ใช้ <ssk-button variant="solid" tone="brand"> (ห้าม themeColor)
-- ทุก font-size ≥ 18px (ห้าม text-xs/text-sm)
-ขอ HTML AppShell พร้อมใช้`,
+    description:
+      "Order management dashboard — AppShell + Sidebar + 4 KPI stat cards + status tab filter + order table + pagination. Use as starting point for any list/dashboard feature.",
+    prompt: `ขอช่วยสร้าง feature page "Order Management" สำหรับ Sellsuki แบบครบเครื่อง
+ใช้ Design System DS 3.0 (MCP ds3 ติดตั้งแล้ว — เรียก get_brand_rules + get_component ก่อน gen)
+brand = ccs3, primary action = "+ สร้างออเดอร์"
+
+โครงสร้างที่ต้องมี:
+1. <ssk-app-shell-provider brand="ccs3"> เป็น root (ห้าม ssk-theme-provider)
+2. <ssk-sidebar> มี ≥3 sidebar-items (Dashboard, Orders, Products, …)
+3. <ssk-page-header title=… subtitle=…> + primary action button
+4. Stat cards 4 ใบ — แสดง KPI + delta % + trend (↗/↘) สีตาม success/danger
+5. Order list panel — toolbar (Filter/Export) + status tabs + table ≥5 rows + pagination
+6. ทุกข้อมูลต้องเป็น realistic (ตัวเลข ฿, ชื่อลูกค้าไทย, order ID monospace)
+
+กฎเข้มงวด:
+- <ssk-button variant="solid|outline|ghost" tone="brand|danger|success|warning|info">
+- ห้าม themeColor บน button (deprecated), ห้าม background-color/font-size inline
+- font-size ≥ 18px เท่านั้น (ห้าม text-xs/text-sm/16px)
+- ใช้ semantic tokens: var(--bg-primary), var(--text-secondary), var(--fg-brand-primary), var(--stroke-secondary)`,
     htmlSource: `<ssk-app-shell-provider brand="ccs3">
   <ssk-app-shell>
 
     <ssk-sidebar slot="sidebar">
       <ssk-logo slot="logo"></ssk-logo>
       <ssk-sidebar-group>
-        <ssk-sidebar-items label="Order Management" active></ssk-sidebar-items>
+        <ssk-sidebar-items label="Dashboard"></ssk-sidebar-items>
+        <ssk-sidebar-items label="Orders" active></ssk-sidebar-items>
+        <ssk-sidebar-items label="Products"></ssk-sidebar-items>
+        <ssk-sidebar-items label="Customers"></ssk-sidebar-items>
+        <ssk-sidebar-items label="Reports"></ssk-sidebar-items>
       </ssk-sidebar-group>
     </ssk-sidebar>
 
     <main>
-      <ssk-page-header title="Order Management">
+      <ssk-page-header
+        title="Order Management"
+        subtitle="จัดการออเดอร์ทั้งหมดจากทุกช่องทาง"
+      >
         <ssk-button slot="action" variant="solid" tone="brand">
-          + New Order
+          + สร้างออเดอร์
         </ssk-button>
       </ssk-page-header>
 
-      <div style="padding: 24px;">
-        <ssk-text>เนื้อหา Order Management</ssk-text>
+      <div style="padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+
+        <!-- 4 KPI stat cards with delta % and trend -->
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+          <div style="padding: 20px; background: var(--bg-primary); border: 1px solid var(--stroke-secondary); border-radius: var(--radius-lg);">
+            <ssk-text style="color: var(--text-secondary); font-size: var(--font-size-caption);">ยอดขายวันนี้</ssk-text>
+            <ssk-heading level="2">฿128,450</ssk-heading>
+            <ssk-text style="color: var(--fg-success-primary); font-size: var(--font-size-caption);">↗ 12.5% vs yesterday</ssk-text>
+          </div>
+          <div style="padding: 20px; background: var(--bg-primary); border: 1px solid var(--stroke-secondary); border-radius: var(--radius-lg);">
+            <ssk-text style="color: var(--text-secondary); font-size: var(--font-size-caption);">ออเดอร์ใหม่</ssk-text>
+            <ssk-heading level="2">47</ssk-heading>
+            <ssk-text style="color: var(--fg-success-primary); font-size: var(--font-size-caption);">↗ 8.2% vs yesterday</ssk-text>
+          </div>
+          <div style="padding: 20px; background: var(--bg-primary); border: 1px solid var(--stroke-secondary); border-radius: var(--radius-lg);">
+            <ssk-text style="color: var(--text-secondary); font-size: var(--font-size-caption);">ลูกค้าใหม่</ssk-text>
+            <ssk-heading level="2">23</ssk-heading>
+            <ssk-text style="color: var(--fg-success-primary); font-size: var(--font-size-caption);">↗ 3.1% vs yesterday</ssk-text>
+          </div>
+          <div style="padding: 20px; background: var(--bg-primary); border: 1px solid var(--stroke-secondary); border-radius: var(--radius-lg);">
+            <ssk-text style="color: var(--text-secondary); font-size: var(--font-size-caption);">สินค้าคงเหลือ</ssk-text>
+            <ssk-heading level="2">1,847</ssk-heading>
+            <ssk-text style="color: var(--fg-danger-primary); font-size: var(--font-size-caption);">↘ 2.4% vs yesterday</ssk-text>
+          </div>
+        </section>
+
+        <!-- Order list panel: toolbar + status tabs + table + pagination -->
+        <div style="background: var(--bg-primary); border: 1px solid var(--stroke-secondary); border-radius: var(--radius-lg); overflow: hidden;">
+          <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--stroke-secondary);">
+            <ssk-heading level="4">รายการออเดอร์</ssk-heading>
+            <div style="display: flex; gap: 8px;">
+              <ssk-button variant="outline" tone="brand">Filter</ssk-button>
+              <ssk-button variant="outline" tone="brand">Export</ssk-button>
+            </div>
+          </div>
+
+          <div role="tablist" style="display: flex; gap: 8px; padding: 12px 20px; border-bottom: 1px solid var(--stroke-secondary); overflow-x: auto;">
+            <button role="tab" aria-selected="true"  style="padding: 8px 16px; border-radius: var(--radius-full); font-size: var(--font-size-caption); background: var(--bg-brand-secondary); color: var(--fg-brand-primary); border: 1px solid var(--fg-brand-primary); cursor: pointer;">ทั้งหมด <span style="margin-left: 8px;">156</span></button>
+            <button role="tab" aria-selected="false" style="padding: 8px 16px; border-radius: var(--radius-full); font-size: var(--font-size-caption); background: transparent; color: var(--text-secondary); border: 1px solid var(--stroke-secondary); cursor: pointer;">รอยืนยัน <span style="margin-left: 8px;">23</span></button>
+            <button role="tab" aria-selected="false" style="padding: 8px 16px; border-radius: var(--radius-full); font-size: var(--font-size-caption); background: transparent; color: var(--text-secondary); border: 1px solid var(--stroke-secondary); cursor: pointer;">ยืนยันแล้ว <span style="margin-left: 8px;">45</span></button>
+            <button role="tab" aria-selected="false" style="padding: 8px 16px; border-radius: var(--radius-full); font-size: var(--font-size-caption); background: transparent; color: var(--text-secondary); border: 1px solid var(--stroke-secondary); cursor: pointer;">กำลังจัดส่ง <span style="margin-left: 8px;">67</span></button>
+            <button role="tab" aria-selected="false" style="padding: 8px 16px; border-radius: var(--radius-full); font-size: var(--font-size-caption); background: transparent; color: var(--text-secondary); border: 1px solid var(--stroke-secondary); cursor: pointer;">สำเร็จ <span style="margin-left: 8px;">21</span></button>
+          </div>
+
+          <table style="width: 100%; border-collapse: collapse; font-size: var(--font-size-p);">
+            <thead>
+              <tr style="background: var(--bg-tertiary); text-align: left;">
+                <th style="padding: 14px 20px; font-size: var(--font-size-label); color: var(--text-secondary);">Order ID</th>
+                <th style="padding: 14px 20px; font-size: var(--font-size-label); color: var(--text-secondary);">ลูกค้า</th>
+                <th style="padding: 14px 20px; font-size: var(--font-size-label); color: var(--text-secondary);">ช่องทาง</th>
+                <th style="padding: 14px 20px; font-size: var(--font-size-label); color: var(--text-secondary); text-align: right;">ยอดเงิน</th>
+                <th style="padding: 14px 20px; font-size: var(--font-size-label); color: var(--text-secondary);">สถานะ</th>
+                <th style="padding: 14px 20px; font-size: var(--font-size-label); color: var(--text-secondary);">วันที่</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--stroke-secondary);"><td style="padding: 14px 20px;"><span style="font-family: var(--font-mono); color: var(--fg-brand-primary);">#ORD-10042</span></td><td style="padding: 14px 20px;">กัญญา มานะ</td><td style="padding: 14px 20px;"><ssk-tag variant="subtle">Shopee</ssk-tag></td><td style="padding: 14px 20px; text-align: right;">฿1,290</td><td style="padding: 14px 20px;"><ssk-badge themeColor="success" variant="subtle">ชำระแล้ว</ssk-badge></td><td style="padding: 14px 20px; color: var(--text-secondary);">2026-05-08 14:23</td></tr>
+              <tr style="border-bottom: 1px solid var(--stroke-secondary);"><td style="padding: 14px 20px;"><span style="font-family: var(--font-mono); color: var(--fg-brand-primary);">#ORD-10041</span></td><td style="padding: 14px 20px;">สมชาย วัฒนกุล</td><td style="padding: 14px 20px;"><ssk-tag variant="subtle">Lazada</ssk-tag></td><td style="padding: 14px 20px; text-align: right;">฿2,480</td><td style="padding: 14px 20px;"><ssk-badge themeColor="info" variant="subtle">กำลังจัดส่ง</ssk-badge></td><td style="padding: 14px 20px; color: var(--text-secondary);">2026-05-08 13:18</td></tr>
+              <tr style="border-bottom: 1px solid var(--stroke-secondary);"><td style="padding: 14px 20px;"><span style="font-family: var(--font-mono); color: var(--fg-brand-primary);">#ORD-10040</span></td><td style="padding: 14px 20px;">พรทิพย์ ศรีสุข</td><td style="padding: 14px 20px;"><ssk-tag variant="subtle">LINE OA</ssk-tag></td><td style="padding: 14px 20px; text-align: right;">฿590</td><td style="padding: 14px 20px;"><ssk-badge themeColor="success" variant="subtle">สำเร็จ</ssk-badge></td><td style="padding: 14px 20px; color: var(--text-secondary);">2026-05-08 12:55</td></tr>
+              <tr style="border-bottom: 1px solid var(--stroke-secondary);"><td style="padding: 14px 20px;"><span style="font-family: var(--font-mono); color: var(--fg-brand-primary);">#ORD-10039</span></td><td style="padding: 14px 20px;">อนุชา พงศ์ไพบูลย์</td><td style="padding: 14px 20px;"><ssk-tag variant="subtle">Web</ssk-tag></td><td style="padding: 14px 20px; text-align: right;">฿4,220</td><td style="padding: 14px 20px;"><ssk-badge themeColor="success" variant="subtle">ชำระแล้ว</ssk-badge></td><td style="padding: 14px 20px; color: var(--text-secondary);">2026-05-08 11:40</td></tr>
+              <tr style="border-bottom: 1px solid var(--stroke-secondary);"><td style="padding: 14px 20px;"><span style="font-family: var(--font-mono); color: var(--fg-brand-primary);">#ORD-10038</span></td><td style="padding: 14px 20px;">วิภา ทรัพย์มาก</td><td style="padding: 14px 20px;"><ssk-tag variant="subtle">TikTok</ssk-tag></td><td style="padding: 14px 20px; text-align: right;">฿890</td><td style="padding: 14px 20px;"><ssk-badge themeColor="warning" variant="subtle">รอชำระ</ssk-badge></td><td style="padding: 14px 20px; color: var(--text-secondary);">2026-05-08 10:12</td></tr>
+            </tbody>
+          </table>
+
+          <div style="padding: 16px 20px; border-top: 1px solid var(--stroke-secondary);">
+            <ssk-pagination currentPage="1" totalPages="16" rowsPerPage="10" allItems="156" showrowsperpage></ssk-pagination>
+          </div>
+        </div>
+
       </div>
     </main>
 
