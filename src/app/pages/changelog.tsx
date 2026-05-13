@@ -37,6 +37,44 @@ interface ChangelogVersion {
 
 export const changelogVersions: ChangelogVersion[] = [
   {
+    version: "3.4.2",
+    date: "May 13, 2026",
+    summary: "Semantic spacing tokens (10 ตัว) + brand-asset registry + ssk-logo อ่าน brand จาก context อัตโนมัติ — vibe-code ไม่ต้องส่ง brand prop ผ่านทุก component, UX/UI tune spacing globally ผ่าน --space-* tokens",
+    tags: ["new", "improved", "fixed"],
+    features: [
+      {
+        icon: <SwatchBook size={16} />,
+        title: "Semantic Spacing Tokens — 10 contexts",
+        description: "เพิ่ม --space-page-x/y, --space-section, --space-container-x/y, --space-stack, --space-row, --space-cluster, --space-table-cell-x/y. Pattern + component authors ใช้ tokens แทน hardcoded px — UX/UI ปรับ spacing global ครั้งเดียวทั้งระบบ. CI ratchet baseline 114 ป้องกัน hardcoded ใหม่",
+      },
+      {
+        icon: <Paintbrush size={16} />,
+        title: "Button token bump 18 → 20px",
+        description: "--font-size-button จาก 18 → 20 match กับ body scale (label/input value/sidebar item). ssk-button ใช้ --font-size-button เป็น fallback ใน parseVariables chain — global bump effective ทันทีโดยไม่ต้องแก้ทุก consumer",
+      },
+      {
+        icon: <Package size={16} />,
+        title: "Brand-asset registry + brandContext",
+        description: "src/contexts/theme/brand-assets.ts — single source of truth สำหรับ logoMark, logoFull, displayName, brandColor keyed by Brand type (ccs3 | patona | oc2plus). brandContext (Lit context) provided ทั้ง <ssk-theme-provider> และ <ssk-app-shell-provider> — descendant อ่าน brand อัตโนมัติ",
+      },
+      {
+        icon: <Layers size={16} />,
+        title: "ssk-logo context-aware",
+        description: "<ssk-logo></ssk-logo> ใน <ssk-app-shell-provider> render brand mark ถูกต้องโดยไม่ต้องส่ง prop. Resolution chain: srcLogo explicit → brand explicit → brandContext → DEFAULT (ccs3). vibe-code AI ไม่ต้องร้อย brand metadata ผ่านทุก component อีก",
+      },
+      {
+        icon: <BookOpen size={16} />,
+        title: "ssk-page-header polish",
+        description: "ตัด white background + border-bottom (เหลือ transparent), subtitle font-size 18 → 20 (--font-size-p — readable supporting body), spacing ใช้ --space-container-y / --space-section. Pattern + page consumers ไม่ต้อง wrap ใน card ก่อน",
+      },
+      {
+        icon: <GitPullRequest size={16} />,
+        title: "Badge & Tag — no text wrap",
+        description: "white-space: nowrap ภายใน pill — order ID #ORD-10042 และ status badge ไม่ขึ้นบรรทัดในตารางแคบอีก",
+      },
+    ],
+  },
+  {
     version: "3.4.0",
     date: "May 8, 2026",
     summary: "Pattern source-of-truth — <ssk-pattern-order-management> เป็น Lit element ตัวแรกที่รุกออกไป Storybook + Vibecode Templates + MCP จากไฟล์เดียว, font-size migration ลบ DS 1.0 carryover (sidebar 24→20px และอีก 10 component)",
